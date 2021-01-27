@@ -1,10 +1,9 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
- > Your author list below should include links to all members GitHub (remove existing author).
+# Zoom Scheduler
  
- > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
+ > Authors: \<[Destiny Hochhalter](https://github.com/DestinyHochhalter)>\<[Aden Ghadimi](https://github.com/aghad)>\<[Francisco Bustamante](https://github.com/frab6562)>
  
  > You will be forming a group of **THREE** students and working on an interesting project. A list of proposed project ideas that have been successful in previous quarters is given in the project specifications link on iLearn. You can select an idea from the list and decide which design patterns you will use to implement it. If you want to propose your own original idea, you will have to contact an instructor to discuss the project and obtain written permission before you submit your project proposal. Your project needs to implement two design patterns.The project work should be divided almost equally among team members and each member is expected to work on at least one design pattern (more than one partner may work on a pattern) and some of its test cases. You can of course help each other, but it needs to be clear who will be responsible for which patterns and for which features.
  
@@ -18,6 +17,30 @@
 > * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group.
 
 ## Project Description
+WHY
+Zoom Scheduler keeps Zoom meeting links organized and in one place. With online learning Zoom links are posted on Slack, iLearn, or emailed. This app helps aleviate the mental load of remebering where each Zoom meeting link is and when the meeting takes place. You can schedule your meetings and open your Zoom meeting through this app. Our app displays meetings in a schedule format, where you can add and edit meeting informantion, and open the Zoom app with your meeting URL.
+
+LANGUAGES/TOOLS
+We will be using the programming language Swift to create a native iOS application. Zoom meetings will be stored offline using [Realm](https://realm.io) -local database for mobile.
+
+INPUT/OUTPUT
+You can add Zoom meetings through filling out a form, where strings can be input for the meeting name, and options such as the day of the week will be selected using a picker view, which will be represneted by an Int. The meetings you add will be displayed in a schedule like fashion, orderd by day chronologically.
+
+DESIGN PATTERNS
+*MVC- We will use the Model View Controller Framework to organize our files. View Controllers will be contained in Controller, UI classes such as UITableView cell classes will be in View, and classes such as the one which represents the Zoom meeting object will be in Model.
+
+*Composite
+We will use a UITableView with various types of UITableView cells to act as a form to add a new zoom meeting. This form displays all the infomation in one place and can be scrolled down, which provides a good user experience. One problem is that we require the meeting name, time, and notes from the user. This infomation requires differnt UI components such as a UITextField for a line of text, UITextView for multiple lines of text, and a UIPickerView to select an option. These various types of cells in one table view require a composite pattern. The tableview cell will be treated similarly by the user, will the same thing with user input, and will have its UI managed in the same way. These cells will make up a form to create a new zoom meeting.
+
+*SINGLETON
+We would like to send the user reminder notifications 10 minutes before their Zoom meeting. This logic might require a Singleton instance since there is only one meeting at a time which we will plan to send out reminders about.
+
+*PROTOCOL DELEGATE
+When the user taps on a meeting in a table view to see more information, the table view cell's delegate function will be called. This pattern helps avoid using bad methods such as tags when identifying exactly what cell coresponding to what object was tapped.
+
+*NOTIFICATION/OBSERVER
+We need offline, local storage, so that the user can add a Zoom Meeting, close the app, then come back. This data persistence requires a database. We will use [Realm](https://realm.io) for offline storage. Realm requires the notification/observer pattern. We must create a notification token and observer to identify changes to our database. Without a notification and observer, we will not know when objects are deleted from the database or updated.
+
  > Your project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you?
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
@@ -59,6 +82,7 @@
  
  ## Screenshots
  > Screenshots of the input/output after running your application
+ 
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
