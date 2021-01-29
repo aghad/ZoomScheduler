@@ -11,7 +11,7 @@ We will be using the programming language Swift to create a native iOS applicati
 **Input/Output**\
 You can add Zoom meetings through filling out a form, where strings can be input for the meeting name, and options such as the day of the week will be selected using a picker view, which will be represented by an Int. The meetings you add will be displayed in a schedule like fashion, ordered by day chronologically./
 
-**DESIGN PATTERNS**
+**Design Patterns**
 
 **Visitor**\
 To add a new zoom meeting, we present the user with a form to fill out. Once each part of our form is filled out (meeting name, selecting the meeting time), we want to iterate over our form. The visitor pattern abstracts away how each part of the form needs to be handled and validated differntly. For example, a meeting end time is not valid if it is before the start time; this logic can be handled seperatly from handling the meeting URL validation. A benefit is if we decide to add new form fields later on, we can easily do so without changing our existing fields.
