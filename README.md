@@ -19,6 +19,9 @@ To add a new zoom meeting, we present the user with a form to fill out. Once eac
 **Protocol Delegate**\
 We use the protocol delegate pattern to identify what object is assoicated with a cell that the user taps. When the user taps on a meeting in a table view to open the Zoom app, the table view cell's delegate function will be called. This pattern helps avoid using bad methods such as tags when identifying exactly what cell corresponding to what object was tapped. We need to know what cell was tapped, because we want to pass the zoom meeting object's URL to a function that opens the Zoom app.
 
+**Singleton**\
+We will implement a static instance of our custom class NotificationManager, which handles the logic of sending local notifications. This class will handle user permissions by checking the permission status and making requests. Our class will also schedule when notifications will be sent out and their content. We want a single instance of this class to avoid asking the user for permission multiple times, or sending out the same notification twice. 
+
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
  > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
