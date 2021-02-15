@@ -20,14 +20,10 @@ We promt the user to fill out a form with various fields to add a new Zoom meeti
 We will implement a static instance of our custom class NotificationManager, which handles the logic of sending local notifications. This class will handle user permissions by checking the permission status and making requests. Our class will also schedule when notifications will be sent out and their content. We want a single instance of this class to avoid asking the user for permission multiple times, or sending out the same notification twice. 
 
  
-># Class Diagram
-
-
-![OMT Diagram](https://www.dropbox.com/s/uke2bqaz6kl3x1b/CS100%20Final%20Project%20OMT%20Diagram.png?dl=0)
+# Class Diagram
 
 ![OMT Diagram](https://github.com/cs100/final-project-aghad003-dhoch002-fbust002/blob/master/CS100 Final Project OMT Diagram.png?raw=true)
 
- 
  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
