@@ -22,7 +22,6 @@ We will implement a static instance of our custom class NotificationManager, whi
  
 # Class Diagram
 
-OMT Diagram 'CS100 Final Project OMT Diagram.png' listed under master branch
 ![alt text](https://github.com/cs100/final-project-aghad003-dhoch002-fbust002/blob/master/CS100%20Final%20Project%20OMT%20Diagram.png?raw=true)
 
  
