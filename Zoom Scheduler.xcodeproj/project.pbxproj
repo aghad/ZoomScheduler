@@ -9,12 +9,11 @@
 /* Begin PBXBuildFile section */
 		333D241425E0BDE60068F4BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D241325E0BDE60068F4BA /* AppDelegate.swift */; };
 		333D241625E0BDE60068F4BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D241525E0BDE60068F4BA /* SceneDelegate.swift */; };
-		333D241825E0BDE60068F4BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D241725E0BDE60068F4BA /* ViewController.swift */; };
-		333D241B25E0BDE60068F4BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 333D241925E0BDE60068F4BA /* Main.storyboard */; };
 		333D241D25E0BDE80068F4BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 333D241C25E0BDE80068F4BA /* Assets.xcassets */; };
 		333D242025E0BDE80068F4BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 333D241E25E0BDE80068F4BA /* LaunchScreen.storyboard */; };
 		333D242B25E0BDE80068F4BA /* Zoom_SchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D242A25E0BDE80068F4BA /* Zoom_SchedulerTests.swift */; };
 		333D243625E0BDE80068F4BA /* Zoom_SchedulerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D243525E0BDE80068F4BA /* Zoom_SchedulerUITests.swift */; };
+		339EF66825E0C85600832138 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF66725E0C85600832138 /* MainVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +37,6 @@
 		333D241025E0BDE60068F4BA /* Zoom Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zoom Scheduler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		333D241325E0BDE60068F4BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		333D241525E0BDE60068F4BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		333D241725E0BDE60068F4BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		333D241A25E0BDE60068F4BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		333D241C25E0BDE80068F4BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		333D241F25E0BDE80068F4BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		333D242125E0BDE80068F4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +46,7 @@
 		333D243125E0BDE80068F4BA /* Zoom SchedulerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zoom SchedulerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		333D243525E0BDE80068F4BA /* Zoom_SchedulerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zoom_SchedulerUITests.swift; sourceTree = "<group>"; };
 		333D243725E0BDE80068F4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		339EF66725E0C85600832138 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +99,9 @@
 			children = (
 				333D241325E0BDE60068F4BA /* AppDelegate.swift */,
 				333D241525E0BDE60068F4BA /* SceneDelegate.swift */,
-				333D241725E0BDE60068F4BA /* ViewController.swift */,
-				333D241925E0BDE60068F4BA /* Main.storyboard */,
+				339EF66325E0C83F00832138 /* Model */,
+				339EF66225E0C83A00832138 /* View */,
+				339EF66125E0C83200832138 /* Controller */,
 				333D241C25E0BDE80068F4BA /* Assets.xcassets */,
 				333D241E25E0BDE80068F4BA /* LaunchScreen.storyboard */,
 				333D242125E0BDE80068F4BA /* Info.plist */,
@@ -126,6 +125,28 @@
 				333D243725E0BDE80068F4BA /* Info.plist */,
 			);
 			path = "Zoom SchedulerUITests";
+			sourceTree = "<group>";
+		};
+		339EF66125E0C83200832138 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				339EF66725E0C85600832138 /* MainVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		339EF66225E0C83A00832138 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		339EF66325E0C83F00832138 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +254,6 @@
 			files = (
 				333D242025E0BDE80068F4BA /* LaunchScreen.storyboard in Resources */,
 				333D241D25E0BDE80068F4BA /* Assets.xcassets in Resources */,
-				333D241B25E0BDE60068F4BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +278,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				333D241825E0BDE60068F4BA /* ViewController.swift in Sources */,
 				333D241425E0BDE60068F4BA /* AppDelegate.swift in Sources */,
+				339EF66825E0C85600832138 /* MainVC.swift in Sources */,
 				333D241625E0BDE60068F4BA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,14 +316,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		333D241925E0BDE60068F4BA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				333D241A25E0BDE60068F4BA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		333D241E25E0BDE80068F4BA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
