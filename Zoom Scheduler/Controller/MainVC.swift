@@ -12,6 +12,7 @@ class MainVC: UIViewController {
     
     
 
+
     override func viewDidLoad() {
         view.backgroundColor = .white
         
