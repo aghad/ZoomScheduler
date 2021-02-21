@@ -13,6 +13,10 @@
 		333D242B25E0BDE80068F4BA /* Zoom_SchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D242A25E0BDE80068F4BA /* Zoom_SchedulerTests.swift */; };
 		333D243625E0BDE80068F4BA /* Zoom_SchedulerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D243525E0BDE80068F4BA /* Zoom_SchedulerUITests.swift */; };
 		339EF66825E0C85600832138 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF66725E0C85600832138 /* MainVC.swift */; };
+		339EF68225E304A600832138 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF68125E304A600832138 /* Extensions.swift */; };
+		339EF68725E3053B00832138 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF68625E3053B00832138 /* Enum.swift */; };
+		339EF69525E3173500832138 /* MeetingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF69425E3173500832138 /* MeetingCell.swift */; };
+		339EF69D25E3176900832138 /* MainVC+table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF69C25E3176900832138 /* MainVC+table.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		333D243525E0BDE80068F4BA /* Zoom_SchedulerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zoom_SchedulerUITests.swift; sourceTree = "<group>"; };
 		333D243725E0BDE80068F4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		339EF66725E0C85600832138 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		339EF68125E304A600832138 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		339EF68625E3053B00832138 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		339EF69425E3173500832138 /* MeetingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingCell.swift; sourceTree = "<group>"; };
+		339EF69C25E3176900832138 /* MainVC+table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+table.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,8 @@
 			children = (
 				333D241325E0BDE60068F4BA /* AppDelegate.swift */,
 				333D241525E0BDE60068F4BA /* SceneDelegate.swift */,
+				339EF68125E304A600832138 /* Extensions.swift */,
+				339EF68625E3053B00832138 /* Enum.swift */,
 				339EF66325E0C83F00832138 /* Model */,
 				339EF66225E0C83A00832138 /* View */,
 				339EF66125E0C83200832138 /* Controller */,
@@ -128,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				339EF66725E0C85600832138 /* MainVC.swift */,
+				339EF69C25E3176900832138 /* MainVC+table.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -135,6 +146,7 @@
 		339EF66225E0C83A00832138 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				339EF69325E3171D00832138 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -144,6 +156,14 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		339EF69325E3171D00832138 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				339EF69425E3173500832138 /* MeetingCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,8 +295,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				333D241425E0BDE60068F4BA /* AppDelegate.swift in Sources */,
+				339EF69525E3173500832138 /* MeetingCell.swift in Sources */,
+				339EF69D25E3176900832138 /* MainVC+table.swift in Sources */,
 				339EF66825E0C85600832138 /* MainVC.swift in Sources */,
 				333D241625E0BDE60068F4BA /* SceneDelegate.swift in Sources */,
+				339EF68725E3053B00832138 /* Enum.swift in Sources */,
+				339EF68225E304A600832138 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

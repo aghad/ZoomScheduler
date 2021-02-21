@@ -11,10 +11,71 @@ import UIKit
 class MainVC: UIViewController {
              
     
+    let meetings = ["meeting1", "meeting2", "meeting3"]
+    
+    // 'My Meetings' title
+    let myMeetingsLbl: UILabel = {
+        let lbl = UILabel()
+        lbl.font = UIFont(name: "Avenir-Heavy", size: 24)!
+        lbl.textAlignment = .center
+        lbl.isUserInteractionEnabled = false
+        lbl.textColor = .darkGray
+        lbl.text = "My Meetings"
+        lbl.numberOfLines = 1
+        return lbl
+    }()
+    
+    // show options
+    let moreImgVw: UIImageView = {
+        let vw = UIImageView()
+        vw.image = UIImage(named: "more")?.pad(-15)
+        vw.contentMode = .scaleAspectFit
+        vw.isUserInteractionEnabled = true
+        return vw
+    }()
+    
+    // add a Zoom meeting
+    let addMeetingImgVw: UIImageView = {
+        let vw = UIImageView()
+        vw.image = UIImage(named: "add")?.pad(-28)
+        vw.contentMode = .scaleAspectFit
+        vw.isUserInteractionEnabled = true
+        return vw
+    }()
+    
+    
+    // table view of zoom meetings
+    var meetingTable: UITableView = {
+        let table = UITableView()
+        table.separatorStyle = .singleLine
+        table.backgroundColor = UIColor.clear
+        table.allowsSelection = false
+        table.tintColor = .lightGray
+        table.separatorColor = .lightGray
+        table.allowsSelectionDuringEditing = false
+        table.isUserInteractionEnabled = true
+        table.separatorStyle = .none
+        return table
+    }()
 
 
     override func viewDidLoad() {
         view.backgroundColor = .white
+        meetingTable.register(MeetingCell.self, forCellReuseIdentifier: "MeetingCell")
+        meetingTable.delegate = self
+        meetingTable.dataSource = self
+        // hide line on bottom of table view
+        meetingTable.tableFooterView = UIView()
+        addLayout()
         
+    }
+    
+    
+    
+    func addLayout() {
+        myMeetingsLbl.addLayout(parentVw: self.view, top: (self.view.topAnchor, Padding.topPadding), horiz: self.view.centerXAnchor)
+        moreImgVw.addLayout(parentVw: self.view, leading: (self.view.leadingAnchor, Padding.leading), vert: myMeetingsLbl.centerYAnchor, height: Padding.moreSize, width: Padding.moreSize)
+        addMeetingImgVw.addLayout(parentVw: self.view, trailing: (self.view.trailingAnchor, 0), vert: myMeetingsLbl.centerYAnchor, height: Padding.addSize, width: Padding.addSize)
+        meetingTable.addLayout(parentVw: self.view, leading: (self.view.leadingAnchor, 0), trailing: (self.view.trailingAnchor, 0), top: (myMeetingsLbl.bottomAnchor, Padding.spacing), bottom: (self.view.bottomAnchor, 0))
     }
 }
