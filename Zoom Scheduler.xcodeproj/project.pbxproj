@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		333D241425E0BDE60068F4BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D241325E0BDE60068F4BA /* AppDelegate.swift */; };
+		333D241625E0BDE60068F4BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D241525E0BDE60068F4BA /* SceneDelegate.swift */; };
+		333D241D25E0BDE80068F4BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 333D241C25E0BDE80068F4BA /* Assets.xcassets */; };
+		333D242B25E0BDE80068F4BA /* Zoom_SchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D242A25E0BDE80068F4BA /* Zoom_SchedulerTests.swift */; };
+		333D243625E0BDE80068F4BA /* Zoom_SchedulerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D243525E0BDE80068F4BA /* Zoom_SchedulerUITests.swift */; };
+		339EF66825E0C85600832138 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF66725E0C85600832138 /* MainVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		333D242725E0BDE80068F4BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 333D240825E0BDE60068F4BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 333D240F25E0BDE60068F4BA;
+			remoteInfo = "Zoom Scheduler";
+		};
+		333D243225E0BDE80068F4BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 333D240825E0BDE60068F4BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 333D240F25E0BDE60068F4BA;
+			remoteInfo = "Zoom Scheduler";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		333D241025E0BDE60068F4BA /* Zoom Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zoom Scheduler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		333D241325E0BDE60068F4BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		333D241525E0BDE60068F4BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		333D241C25E0BDE80068F4BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		333D242125E0BDE80068F4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		333D242625E0BDE80068F4BA /* Zoom SchedulerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zoom SchedulerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		333D242A25E0BDE80068F4BA /* Zoom_SchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zoom_SchedulerTests.swift; sourceTree = "<group>"; };
+		333D242C25E0BDE80068F4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		333D243125E0BDE80068F4BA /* Zoom SchedulerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zoom SchedulerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		333D243525E0BDE80068F4BA /* Zoom_SchedulerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zoom_SchedulerUITests.swift; sourceTree = "<group>"; };
+		333D243725E0BDE80068F4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		339EF66725E0C85600832138 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		333D240D25E0BDE60068F4BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		333D242325E0BDE80068F4BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		333D242E25E0BDE80068F4BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		333D240725E0BDE60068F4BA = {
+			isa = PBXGroup;
+			children = (
+				333D241225E0BDE60068F4BA /* Zoom Scheduler */,
+				333D242925E0BDE80068F4BA /* Zoom SchedulerTests */,
+				333D243425E0BDE80068F4BA /* Zoom SchedulerUITests */,
+				333D241125E0BDE60068F4BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		333D241125E0BDE60068F4BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				333D241025E0BDE60068F4BA /* Zoom Scheduler.app */,
+				333D242625E0BDE80068F4BA /* Zoom SchedulerTests.xctest */,
+				333D243125E0BDE80068F4BA /* Zoom SchedulerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		333D241225E0BDE60068F4BA /* Zoom Scheduler */ = {
+			isa = PBXGroup;
+			children = (
+				333D241325E0BDE60068F4BA /* AppDelegate.swift */,
+				333D241525E0BDE60068F4BA /* SceneDelegate.swift */,
+				339EF66325E0C83F00832138 /* Model */,
+				339EF66225E0C83A00832138 /* View */,
+				339EF66125E0C83200832138 /* Controller */,
+				333D241C25E0BDE80068F4BA /* Assets.xcassets */,
+				333D242125E0BDE80068F4BA /* Info.plist */,
+			);
+			path = "Zoom Scheduler";
+			sourceTree = "<group>";
+		};
+		333D242925E0BDE80068F4BA /* Zoom SchedulerTests */ = {
+			isa = PBXGroup;
+			children = (
+				333D242A25E0BDE80068F4BA /* Zoom_SchedulerTests.swift */,
+				333D242C25E0BDE80068F4BA /* Info.plist */,
+			);
+			path = "Zoom SchedulerTests";
+			sourceTree = "<group>";
+		};
+		333D243425E0BDE80068F4BA /* Zoom SchedulerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				333D243525E0BDE80068F4BA /* Zoom_SchedulerUITests.swift */,
+				333D243725E0BDE80068F4BA /* Info.plist */,
+			);
+			path = "Zoom SchedulerUITests";
+			sourceTree = "<group>";
+		};
+		339EF66125E0C83200832138 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				339EF66725E0C85600832138 /* MainVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		339EF66225E0C83A00832138 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		339EF66325E0C83F00832138 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		333D240F25E0BDE60068F4BA /* Zoom Scheduler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 333D243A25E0BDE80068F4BA /* Build configuration list for PBXNativeTarget "Zoom Scheduler" */;
+			buildPhases = (
+				333D240C25E0BDE60068F4BA /* Sources */,
+				333D240D25E0BDE60068F4BA /* Frameworks */,
+				333D240E25E0BDE60068F4BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Zoom Scheduler";
+			productName = "Zoom Scheduler";
+			productReference = 333D241025E0BDE60068F4BA /* Zoom Scheduler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		333D242525E0BDE80068F4BA /* Zoom SchedulerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 333D243D25E0BDE80068F4BA /* Build configuration list for PBXNativeTarget "Zoom SchedulerTests" */;
+			buildPhases = (
+				333D242225E0BDE80068F4BA /* Sources */,
+				333D242325E0BDE80068F4BA /* Frameworks */,
+				333D242425E0BDE80068F4BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				333D242825E0BDE80068F4BA /* PBXTargetDependency */,
+			);
+			name = "Zoom SchedulerTests";
+			productName = "Zoom SchedulerTests";
+			productReference = 333D242625E0BDE80068F4BA /* Zoom SchedulerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		333D243025E0BDE80068F4BA /* Zoom SchedulerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 333D244025E0BDE80068F4BA /* Build configuration list for PBXNativeTarget "Zoom SchedulerUITests" */;
+			buildPhases = (
+				333D242D25E0BDE80068F4BA /* Sources */,
+				333D242E25E0BDE80068F4BA /* Frameworks */,
+				333D242F25E0BDE80068F4BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				333D243325E0BDE80068F4BA /* PBXTargetDependency */,
+			);
+			name = "Zoom SchedulerUITests";
+			productName = "Zoom SchedulerUITests";
+			productReference = 333D243125E0BDE80068F4BA /* Zoom SchedulerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		333D240825E0BDE60068F4BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					333D240F25E0BDE60068F4BA = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					333D242525E0BDE80068F4BA = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 333D240F25E0BDE60068F4BA;
+					};
+					333D243025E0BDE80068F4BA = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 333D240F25E0BDE60068F4BA;
+					};
+				};
+			};
+			buildConfigurationList = 333D240B25E0BDE60068F4BA /* Build configuration list for PBXProject "Zoom Scheduler" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 333D240725E0BDE60068F4BA;
+			productRefGroup = 333D241125E0BDE60068F4BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				333D240F25E0BDE60068F4BA /* Zoom Scheduler */,
+				333D242525E0BDE80068F4BA /* Zoom SchedulerTests */,
+				333D243025E0BDE80068F4BA /* Zoom SchedulerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		333D240E25E0BDE60068F4BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				333D241D25E0BDE80068F4BA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		333D242425E0BDE80068F4BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		333D242F25E0BDE80068F4BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		333D240C25E0BDE60068F4BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				333D241425E0BDE60068F4BA /* AppDelegate.swift in Sources */,
+				339EF66825E0C85600832138 /* MainVC.swift in Sources */,
+				333D241625E0BDE60068F4BA /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		333D242225E0BDE80068F4BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				333D242B25E0BDE80068F4BA /* Zoom_SchedulerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		333D242D25E0BDE80068F4BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				333D243625E0BDE80068F4BA /* Zoom_SchedulerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		333D242825E0BDE80068F4BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 333D240F25E0BDE60068F4BA /* Zoom Scheduler */;
+			targetProxy = 333D242725E0BDE80068F4BA /* PBXContainerItemProxy */;
+		};
+		333D243325E0BDE80068F4BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 333D240F25E0BDE60068F4BA /* Zoom Scheduler */;
+			targetProxy = 333D243225E0BDE80068F4BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		333D243825E0BDE80068F4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		333D243925E0BDE80068F4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		333D243B25E0BDE80068F4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6DJ78292P6;
+				INFOPLIST_FILE = "Zoom Scheduler/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "destiny.hoch.Zoom-Scheduler";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		333D243C25E0BDE80068F4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6DJ78292P6;
+				INFOPLIST_FILE = "Zoom Scheduler/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "destiny.hoch.Zoom-Scheduler";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		333D243E25E0BDE80068F4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6DJ78292P6;
+				INFOPLIST_FILE = "Zoom SchedulerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "destiny.hoch.Zoom-SchedulerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zoom Scheduler.app/Zoom Scheduler";
+			};
+			name = Debug;
+		};
+		333D243F25E0BDE80068F4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6DJ78292P6;
+				INFOPLIST_FILE = "Zoom SchedulerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "destiny.hoch.Zoom-SchedulerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zoom Scheduler.app/Zoom Scheduler";
+			};
+			name = Release;
+		};
+		333D244125E0BDE80068F4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6DJ78292P6;
+				INFOPLIST_FILE = "Zoom SchedulerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "destiny.hoch.Zoom-SchedulerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Zoom Scheduler";
+			};
+			name = Debug;
+		};
+		333D244225E0BDE80068F4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6DJ78292P6;
+				INFOPLIST_FILE = "Zoom SchedulerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "destiny.hoch.Zoom-SchedulerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Zoom Scheduler";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		333D240B25E0BDE60068F4BA /* Build configuration list for PBXProject "Zoom Scheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				333D243825E0BDE80068F4BA /* Debug */,
+				333D243925E0BDE80068F4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		333D243A25E0BDE80068F4BA /* Build configuration list for PBXNativeTarget "Zoom Scheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				333D243B25E0BDE80068F4BA /* Debug */,
+				333D243C25E0BDE80068F4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		333D243D25E0BDE80068F4BA /* Build configuration list for PBXNativeTarget "Zoom SchedulerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				333D243E25E0BDE80068F4BA /* Debug */,
+				333D243F25E0BDE80068F4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		333D244025E0BDE80068F4BA /* Build configuration list for PBXNativeTarget "Zoom SchedulerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				333D244125E0BDE80068F4BA /* Debug */,
+				333D244225E0BDE80068F4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 333D240825E0BDE60068F4BA /* Project object */;
+}
