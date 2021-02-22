@@ -17,7 +17,9 @@
 		339EF68725E3053B00832138 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF68625E3053B00832138 /* Enum.swift */; };
 		339EF69525E3173500832138 /* MeetingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF69425E3173500832138 /* MeetingCell.swift */; };
 		339EF69D25E3176900832138 /* MainVC+table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF69C25E3176900832138 /* MainVC+table.swift */; };
-		3FFF97D025E35D0F007BAE2E /* ZoomMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF97CF25E35D0F007BAE2E /* ZoomMeeting.swift */; };
+		3FF344DAF9134FDE2F01ADBD /* Pods_Zoom_Scheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2CB2467656FB664D2336900 /* Pods_Zoom_Scheduler.framework */; };
+		5CDDBE14CE8AA859FEDE6C77 /* Pods_Zoom_SchedulerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F2237A408116E9EDC338C8E /* Pods_Zoom_SchedulerTests.framework */; };
+		FD394923873378D391018286 /* Pods_Zoom_Scheduler_Zoom_SchedulerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E65DA4C6A32F29488E34C8 /* Pods_Zoom_Scheduler_Zoom_SchedulerUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F8F5E7075D818667628D89F /* Pods-Zoom SchedulerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom SchedulerTests.release.xcconfig"; path = "Target Support Files/Pods-Zoom SchedulerTests/Pods-Zoom SchedulerTests.release.xcconfig"; sourceTree = "<group>"; };
 		333D241025E0BDE60068F4BA /* Zoom Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zoom Scheduler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		333D241325E0BDE60068F4BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		333D241525E0BDE60068F4BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +57,14 @@
 		339EF68625E3053B00832138 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		339EF69425E3173500832138 /* MeetingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingCell.swift; sourceTree = "<group>"; };
 		339EF69C25E3176900832138 /* MainVC+table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+table.swift"; sourceTree = "<group>"; };
-		3FFF97CF25E35D0F007BAE2E /* ZoomMeeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomMeeting.swift; sourceTree = "<group>"; };
+		5F2237A408116E9EDC338C8E /* Pods_Zoom_SchedulerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zoom_SchedulerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91A872E50717EE57EFA69243 /* Pods-Zoom Scheduler-Zoom SchedulerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom Scheduler-Zoom SchedulerUITests.release.xcconfig"; path = "Target Support Files/Pods-Zoom Scheduler-Zoom SchedulerUITests/Pods-Zoom Scheduler-Zoom SchedulerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B7FE5BDC0817647266316F16 /* Pods-Zoom Scheduler-Zoom SchedulerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom Scheduler-Zoom SchedulerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Zoom Scheduler-Zoom SchedulerUITests/Pods-Zoom Scheduler-Zoom SchedulerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C2CB2467656FB664D2336900 /* Pods_Zoom_Scheduler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zoom_Scheduler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70E7EE760F5A351AB104756 /* Pods-Zoom SchedulerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom SchedulerTests.debug.xcconfig"; path = "Target Support Files/Pods-Zoom SchedulerTests/Pods-Zoom SchedulerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D67E4708758104F17AAFD3E2 /* Pods-Zoom Scheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom Scheduler.release.xcconfig"; path = "Target Support Files/Pods-Zoom Scheduler/Pods-Zoom Scheduler.release.xcconfig"; sourceTree = "<group>"; };
+		E65FECCC9F028F9EF3ECE885 /* Pods-Zoom Scheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom Scheduler.debug.xcconfig"; path = "Target Support Files/Pods-Zoom Scheduler/Pods-Zoom Scheduler.debug.xcconfig"; sourceTree = "<group>"; };
+		E9E65DA4C6A32F29488E34C8 /* Pods_Zoom_Scheduler_Zoom_SchedulerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zoom_Scheduler_Zoom_SchedulerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF344DAF9134FDE2F01ADBD /* Pods_Zoom_Scheduler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CDDBE14CE8AA859FEDE6C77 /* Pods_Zoom_SchedulerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD394923873378D391018286 /* Pods_Zoom_Scheduler_Zoom_SchedulerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +102,8 @@
 				333D242925E0BDE80068F4BA /* Zoom SchedulerTests */,
 				333D243425E0BDE80068F4BA /* Zoom SchedulerUITests */,
 				333D241125E0BDE60068F4BA /* Products */,
+				8409EED9D585CB33B9B2B303 /* Pods */,
+				557DCCE2F9E2F5B2BDAF4C5B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,12 +176,28 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		3FFF97CE25E35CFD007BAE2E /* Model */ = {
+		557DCCE2F9E2F5B2BDAF4C5B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3FFF97CF25E35D0F007BAE2E /* ZoomMeeting.swift */,
+				C2CB2467656FB664D2336900 /* Pods_Zoom_Scheduler.framework */,
+				E9E65DA4C6A32F29488E34C8 /* Pods_Zoom_Scheduler_Zoom_SchedulerUITests.framework */,
+				5F2237A408116E9EDC338C8E /* Pods_Zoom_SchedulerTests.framework */,
 			);
-			path = Model;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8409EED9D585CB33B9B2B303 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E65FECCC9F028F9EF3ECE885 /* Pods-Zoom Scheduler.debug.xcconfig */,
+				D67E4708758104F17AAFD3E2 /* Pods-Zoom Scheduler.release.xcconfig */,
+				B7FE5BDC0817647266316F16 /* Pods-Zoom Scheduler-Zoom SchedulerUITests.debug.xcconfig */,
+				91A872E50717EE57EFA69243 /* Pods-Zoom Scheduler-Zoom SchedulerUITests.release.xcconfig */,
+				C70E7EE760F5A351AB104756 /* Pods-Zoom SchedulerTests.debug.xcconfig */,
+				0F8F5E7075D818667628D89F /* Pods-Zoom SchedulerTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,9 +207,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 333D243A25E0BDE80068F4BA /* Build configuration list for PBXNativeTarget "Zoom Scheduler" */;
 			buildPhases = (
+				779891CE89B8998C3971651A /* [CP] Check Pods Manifest.lock */,
 				333D240C25E0BDE60068F4BA /* Sources */,
 				333D240D25E0BDE60068F4BA /* Frameworks */,
 				333D240E25E0BDE60068F4BA /* Resources */,
+				DF975DCF33A388D43F529AF2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +226,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 333D243D25E0BDE80068F4BA /* Build configuration list for PBXNativeTarget "Zoom SchedulerTests" */;
 			buildPhases = (
+				CFF59C23269B1981E4109C44 /* [CP] Check Pods Manifest.lock */,
 				333D242225E0BDE80068F4BA /* Sources */,
 				333D242325E0BDE80068F4BA /* Frameworks */,
 				333D242425E0BDE80068F4BA /* Resources */,
@@ -211,9 +245,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 333D244025E0BDE80068F4BA /* Build configuration list for PBXNativeTarget "Zoom SchedulerUITests" */;
 			buildPhases = (
+				DC4E166A0B998BE8C0874C52 /* [CP] Check Pods Manifest.lock */,
 				333D242D25E0BDE80068F4BA /* Sources */,
 				333D242E25E0BDE80068F4BA /* Frameworks */,
 				333D242F25E0BDE80068F4BA /* Resources */,
+				36F6A90618BD502F45647A73 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -291,6 +327,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36F6A90618BD502F45647A73 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zoom Scheduler-Zoom SchedulerUITests/Pods-Zoom Scheduler-Zoom SchedulerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zoom Scheduler-Zoom SchedulerUITests/Pods-Zoom Scheduler-Zoom SchedulerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zoom Scheduler-Zoom SchedulerUITests/Pods-Zoom Scheduler-Zoom SchedulerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		779891CE89B8998C3971651A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zoom Scheduler-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFF59C23269B1981E4109C44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zoom SchedulerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC4E166A0B998BE8C0874C52 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zoom Scheduler-Zoom SchedulerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF975DCF33A388D43F529AF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zoom Scheduler/Pods-Zoom Scheduler-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zoom Scheduler/Pods-Zoom Scheduler-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zoom Scheduler/Pods-Zoom Scheduler-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		333D240C25E0BDE60068F4BA /* Sources */ = {
@@ -458,6 +597,7 @@
 		};
 		333D243B25E0BDE80068F4BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E65FECCC9F028F9EF3ECE885 /* Pods-Zoom Scheduler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -477,6 +617,7 @@
 		};
 		333D243C25E0BDE80068F4BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D67E4708758104F17AAFD3E2 /* Pods-Zoom Scheduler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -496,6 +637,7 @@
 		};
 		333D243E25E0BDE80068F4BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C70E7EE760F5A351AB104756 /* Pods-Zoom SchedulerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -518,6 +660,7 @@
 		};
 		333D243F25E0BDE80068F4BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F8F5E7075D818667628D89F /* Pods-Zoom SchedulerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -540,6 +683,7 @@
 		};
 		333D244125E0BDE80068F4BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7FE5BDC0817647266316F16 /* Pods-Zoom Scheduler-Zoom SchedulerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -560,6 +704,7 @@
 		};
 		333D244225E0BDE80068F4BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91A872E50717EE57EFA69243 /* Pods-Zoom Scheduler-Zoom SchedulerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -11,7 +11,6 @@ import UIKit
 class MainVC: UIViewController {
              
     
-    let meetings = ["meeting1", "meeting2", "meeting3"]
     
     // 'My Meetings' title
     let myMeetingsLbl: UILabel = {
@@ -37,7 +36,7 @@ class MainVC: UIViewController {
     // add a Zoom meeting
     let addMeetingImgVw: UIImageView = {
         let vw = UIImageView()
-        vw.image = UIImage(named: "add")?.pad(-28)
+        vw.image = UIImage(named: "add")?.pad(-30)
         vw.contentMode = .scaleAspectFit
         vw.isUserInteractionEnabled = true
         return vw

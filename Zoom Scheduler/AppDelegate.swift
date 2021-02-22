@@ -6,14 +6,37 @@
 //
 
 import UIKit
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    var window: UIWindow?
+    var navigationController: UINavigationController?
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Configure Realm -local stoarge
+        
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in
+                if (oldSchemaVersion < 1) {
+                    // Realm will automatically detect new properties and removed properties
+                    // And will update the schema on disk automatically
+                }
+        })
+        Realm.Configuration.defaultConfiguration = config
+        let realm = try! Realm()
+        Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
+        
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let vc = MainVC()
+        self.window?.rootViewController = UINavigationController(rootViewController: vc)
+        
         return true
     }
 
