@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let realm = try! Realm()
         Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
         
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         let vc = MainVC()
         self.window?.rootViewController = UINavigationController(rootViewController: vc)

@@ -11,7 +11,6 @@ import UIKit
 class MainVC: UIViewController {
              
     
-    let meetings = ["meeting1", "meeting2", "meeting3"]
     
     // 'My Meetings' title
     let myMeetingsLbl: UILabel = {
