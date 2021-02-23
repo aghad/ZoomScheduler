@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol MeetingCellDelegate {
-    
+    func joinMeetingTapped(cell: MeetingCell)
 }
 
 class MeetingCell: UITableViewCell {
@@ -139,5 +139,14 @@ class MeetingCell: UITableViewCell {
         joinMeetingVw.removeFromSuperview()
     }
     
-
+// Gestures
+    
+    @objc func _joinMeetingTapped() {
+        delegate?.joinMeetingTapped(cell: self)
+    }
+    
+    func addGestures() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(_joinMeetingTapped))
+        joinMeetingVw.addGestureRecognizer(tap)
+    }
 }
