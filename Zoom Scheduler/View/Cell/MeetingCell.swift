@@ -31,16 +31,18 @@ class MeetingCell: UITableViewCell {
         lbl.numberOfLines = 0
         return lbl
     }()
-    
+  
     
     // add layout
-    private func layoutCell() {
-        meetingNameLbl.fill(self.contentView)
-    }
+    private func layoutCell()
+    //Add layout later
+        {
+            meetingNameLbl.fill(self.contentView)
+        }
     
-    func setup(meeting: String) {
+    func setup(meeting: ZoomMeeting) {
         
-        meetingNameLbl.text = meeting
+        meetingNameLbl.text = meeting.meetingName
         layoutCell()
         self.contentView.backgroundColor = .clear
     }
