@@ -7,10 +7,19 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class MainVC: UIViewController {
              
-    
+    // Setup Realm
+        var meetings = [String]()
+        var realm = try! Realm()
+        var notificationToken: NotificationToken? = nil
+        var results: Results<ZoomMeeting>?
+        
+        deinit {
+            notificationToken?.invalidate()
+        }
     
     // 'My Meetings' title
     let myMeetingsLbl: UILabel = {
@@ -66,6 +75,7 @@ class MainVC: UIViewController {
         // hide line on bottom of table view
         meetingTable.tableFooterView = UIView()
         addLayout()
+        setRealm()
         
     }
     
@@ -77,4 +87,20 @@ class MainVC: UIViewController {
         addMeetingImgVw.addLayout(parentVw: self.view, trailing: (self.view.trailingAnchor, 0), vert: myMeetingsLbl.centerYAnchor, height: Padding.addSize, width: Padding.addSize)
         meetingTable.addLayout(parentVw: self.view, leading: (self.view.leadingAnchor, 0), trailing: (self.view.trailingAnchor, 0), top: (myMeetingsLbl.bottomAnchor, Padding.spacing), bottom: (self.view.bottomAnchor, 0))
     }
+
+    func setRealm() {
+            // if there are any changes to local data (deletions, additions, edits), then update results
+            results = realm.objects(ZoomMeeting.self)
+            
+            // Observe Results Notifications
+            notificationToken = results?.observe { [weak self] (changes: RealmCollectionChange) in
+                guard let _results = self?.results else {
+                    return
+                }
+                self?.results = _results
+                
+                // if any changes, reload table
+                self?.meetingTable.reloadData()
+            }
+        }
 }
