@@ -119,6 +119,11 @@ class MeetingCell: UITableViewCell {
     func setup(meeting: ZoomMeeting) {
         
         meetingNameLbl.text = meeting.meetingName
+        professorLbl.text = meeting.professorName
+        
+        startTimeLbl.text = timeOfDay[meeting.startTime]
+        endTimeLbl.text = timeOfDay[meeting.endTime]
+        
         layoutCell()
         self.contentView.backgroundColor = .clear
     }
@@ -127,6 +132,11 @@ class MeetingCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         meetingNameLbl.removeFromSuperview()
+        professorLbl.removeFromSuperview()
+        startTimeLbl.removeFromSuperview()
+        endTimeLbl.removeFromSuperview()
+        joinMeetingLbl.removeFromSuperview()
+        joinMeetingVw.removeFromSuperview()
     }
     
 
