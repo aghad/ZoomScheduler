@@ -8,6 +8,15 @@
 import Foundation
 import UIKit
 
+// light-weigth class to represent section headers for tableview
+// sections have a title and an array of ZoomMeeting objects
+// Sections will be days of week, ex: Monday
+struct Section {
+    var title: String
+    var items: [ZoomMeeting]
+}
+
+
 //dictionary of days of week (Key,Value) = (Int, String) = (key, Day)
 var weekDays: [Int:String] = [0:"Monday", 1:"Tuesday", 2:"Wednesday", 3:"Thursday", 4:"Friday", 5:"Saturday", 6:"Sunday"]
 

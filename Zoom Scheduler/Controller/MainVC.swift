@@ -65,6 +65,11 @@ class MainVC: UIViewController {
         table.separatorStyle = .none
         return table
     }()
+    
+    // Section headers for each day of the week
+    // only include days we have meetings
+    // ex: no meeting on Sunday, so do not include as a sections
+    var sections: [Section] = []
 
 
     override func viewDidLoad() {
@@ -77,8 +82,8 @@ class MainVC: UIViewController {
         addLayout()
         setRealm()
         let meetings = ZoomMeeting(meetingName: "temp", professorName: "temp1", startTime: 1, endTime: 2, meetringURL: "temp3", dayOfWeek: 3)
-        //self.realm.addMeeting(meetings)
-        
+       // self.realm.addMeeting(meetings)
+        //self.realm.deleteRealm()
     }
     
     
@@ -100,6 +105,16 @@ class MainVC: UIViewController {
                     return
                 }
                 self?.results = _results
+                
+                // sort out meetings into sections, sort by day of the week
+                // Monday (0) has precedence over Tuesday (1)
+                // sort by day, which is an Int value
+                let dayDict = Dictionary(grouping: (self?.results?.sorted(by: {$0.dayOfWeek < $1.dayOfWeek}))!, by: { Int($0.dayOfWeek)})
+             
+                    
+                self?.sections = dayDict.keys.sorted().map { key in
+                    Section(title: weekDays[key] ?? "", items: dayDict[key] ?? [])
+                }
                 
                 // if any changes, reload table
                 self?.meetingTable.reloadData()
