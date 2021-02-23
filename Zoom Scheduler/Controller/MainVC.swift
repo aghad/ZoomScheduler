@@ -12,7 +12,7 @@ import RealmSwift
 class MainVC: UIViewController {
              
     // Setup Realm
-        var meetings = [String]()
+       
         var realm = try! Realm()
         var notificationToken: NotificationToken? = nil
         var results: Results<ZoomMeeting>?
@@ -76,6 +76,8 @@ class MainVC: UIViewController {
         meetingTable.tableFooterView = UIView()
         addLayout()
         setRealm()
+        let meetings = ZoomMeeting(meetingName: "temp", professorName: "temp1", startTime: 1, endTime: 2, meetringURL: "temp3", dayOfWeek: 3)
+        //self.realm.addMeeting(meetings)
         
     }
     
