@@ -20,7 +20,7 @@ extension MainVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MeetingCell", for: indexPath) as? MeetingCell {
             let meeting = sections[indexPath.section].items[indexPath.row]
-            //cell.delegate = self
+            cell.delegate = self
             cell.setup(meeting: meeting)
             return cell
             

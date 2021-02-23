@@ -125,6 +125,7 @@ class MeetingCell: UITableViewCell {
         endTimeLbl.text = timeOfDay[meeting.endTime]
         
         layoutCell()
+        addGestures()
         self.contentView.backgroundColor = .clear
     }
     
