@@ -21,8 +21,9 @@ struct Section {
 var weekDays: [Int:String] = [0:"Monday", 1:"Tuesday", 2:"Wednesday", 3:"Thursday", 4:"Friday", 5:"Saturday", 6:"Sunday"]
 
 var ampm: [Int: String] = [0: "am", 1: "pm"]
-// dictionary to represent all times of day, in increments of 5
 
+
+// dictionary to represent all times of day, in increments of 5
 var timeOfDay: [Int:String] = [
     // 1 AM
     0: "1:00",
@@ -31,7 +32,7 @@ var timeOfDay: [Int:String] = [
     3: "1:15",
     4: "1:20",
     5: "1:25",
-    6: "1:3",
+    6: "1:30",
     7: "1:35",
     8: "1:40",
     9: "1:45",

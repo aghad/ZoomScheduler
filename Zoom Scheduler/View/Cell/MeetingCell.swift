@@ -117,7 +117,7 @@ class MeetingCell: UITableViewCell {
         }
     
     func setup(meeting: ZoomMeeting) {
-        
+        self.contentView.backgroundColor = .white
         meetingNameLbl.text = meeting.meetingName
         professorLbl.text = meeting.professorName
         
@@ -126,7 +126,6 @@ class MeetingCell: UITableViewCell {
         
         layoutCell()
         addGestures()
-        self.contentView.backgroundColor = .clear
     }
     
     // avoid reuse bugs
