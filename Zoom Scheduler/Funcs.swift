@@ -53,3 +53,8 @@ func isURlValid(url: URL) -> Bool {
     return isValid
 }
 
+func addHapticFeedback(style: UIImpactFeedbackGenerator.FeedbackStyle = .medium) {
+    let generator = UIImpactFeedbackGenerator(style: style)
+    generator.prepare()
+    generator.impactOccurred()
+}
