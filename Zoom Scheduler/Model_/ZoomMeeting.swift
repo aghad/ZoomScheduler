@@ -23,14 +23,14 @@ class ZoomMeeting : Object {
                      professorName:String? = nil,
                      startTime:Int = 0,
                      endTime:Int = 0,
-                     meetringURL:String? = nil,
+                     meetingURL:String? = nil,
                      dayOfWeek:Int = 0){
         self.init()
         self.meetingName = meetingName
         self.professorName = professorName
         self.startTime = startTime
         self.endTime = endTime
-        self.meetingURL = meetringURL
+        self.meetingURL = meetingURL
         self.dayOfWeek = dayOfWeek
     }
     
