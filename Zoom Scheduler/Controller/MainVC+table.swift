@@ -60,6 +60,16 @@ extension MainVC : UITableViewDelegate, UITableViewDataSource {
 extension MainVC: MeetingCellDelegate {
     
     func joinMeetingTapped(cell: MeetingCell) {
-        print("tapped")
+        if let indexPath = meetingTable.indexPath(for: cell) {
+            let meeting = results?[indexPath.row]
+            if let meeting_url = meeting?.meetingURL{
+                if let url = createURL(url: meeting_url){
+                    if isURlValid(url: url){
+                        UIApplication.shared.open(url)
+                    }
+                }
+            }
+        }
     }
 }
+

@@ -82,7 +82,7 @@ class MainVC: UIViewController {
         addLayout()
         setRealm()
         let meetings = ZoomMeeting(meetingName: "temp", professorName: "temp1", startTime: 1, endTime: 2, meetringURL: "temp3", dayOfWeek: 3)
-       // self.realm.addMeeting(meetings)
+        //self.realm.addMeeting(meetings)
         //self.realm.deleteRealm()
     }
     
