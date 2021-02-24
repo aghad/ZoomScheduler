@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		33226FF325E62D5F00C113E8 /* MeetingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33226FF225E62D5F00C113E8 /* MeetingVC.swift */; };
 		33226FFB25E6300C00C113E8 /* MeetingVC+table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33226FFA25E6300C00C113E8 /* MeetingVC+table.swift */; };
-		3322700825E6313900C113E8 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322700725E6313900C113E8 /* FormCell.swift */; };
+		3322700D25E63AC700C113E8 /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322700C25E63AC700C113E8 /* Nodes.swift */; };
+		3322701225E63C7600C113E8 /* TextfieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322701125E63C7600C113E8 /* TextfieldCell.swift */; };
+		3322701725E63D7E00C113E8 /* PickerviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322701625E63D7E00C113E8 /* PickerviewCell.swift */; };
 		333D241425E0BDE60068F4BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D241325E0BDE60068F4BA /* AppDelegate.swift */; };
 		333D241625E0BDE60068F4BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D241525E0BDE60068F4BA /* SceneDelegate.swift */; };
 		333D241D25E0BDE80068F4BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 333D241C25E0BDE80068F4BA /* Assets.xcassets */; };
@@ -49,7 +51,9 @@
 		0F8F5E7075D818667628D89F /* Pods-Zoom SchedulerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom SchedulerTests.release.xcconfig"; path = "Target Support Files/Pods-Zoom SchedulerTests/Pods-Zoom SchedulerTests.release.xcconfig"; sourceTree = "<group>"; };
 		33226FF225E62D5F00C113E8 /* MeetingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingVC.swift; sourceTree = "<group>"; };
 		33226FFA25E6300C00C113E8 /* MeetingVC+table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeetingVC+table.swift"; sourceTree = "<group>"; };
-		3322700725E6313900C113E8 /* FormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCell.swift; sourceTree = "<group>"; };
+		3322700C25E63AC700C113E8 /* Nodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nodes.swift; sourceTree = "<group>"; };
+		3322701125E63C7600C113E8 /* TextfieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldCell.swift; sourceTree = "<group>"; };
+		3322701625E63D7E00C113E8 /* PickerviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerviewCell.swift; sourceTree = "<group>"; };
 		333D241025E0BDE60068F4BA /* Zoom Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zoom Scheduler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		333D241325E0BDE60068F4BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		333D241525E0BDE60068F4BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 				339EF68625E3053B00832138 /* Enum.swift */,
 				F699628725E4CEA50086CEBE /* Funcs.swift */,
 				3F27F48B25E4D38400B2A14A /* Constants.swift */,
+				3322700C25E63AC700C113E8 /* Nodes.swift */,
 				F652BE2625E4C8FB00AC71D0 /* Model_ */,
 				339EF66225E0C83A00832138 /* View */,
 				339EF66125E0C83200832138 /* Controller */,
@@ -188,7 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				339EF69425E3173500832138 /* MeetingCell.swift */,
-				3322700725E6313900C113E8 /* FormCell.swift */,
+				3322701125E63C7600C113E8 /* TextfieldCell.swift */,
+				3322701625E63D7E00C113E8 /* PickerviewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -461,16 +467,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F699628825E4CEA50086CEBE /* Funcs.swift in Sources */,
+				3322701225E63C7600C113E8 /* TextfieldCell.swift in Sources */,
 				33226FFB25E6300C00C113E8 /* MeetingVC+table.swift in Sources */,
 				333D241425E0BDE60068F4BA /* AppDelegate.swift in Sources */,
 				339EF69525E3173500832138 /* MeetingCell.swift in Sources */,
-				3322700825E6313900C113E8 /* FormCell.swift in Sources */,
 				F652BE2825E4C91F00AC71D0 /* ZoomMeeting.swift in Sources */,
 				339EF69D25E3176900832138 /* MainVC+table.swift in Sources */,
+				3322701725E63D7E00C113E8 /* PickerviewCell.swift in Sources */,
 				3F27F48C25E4D38400B2A14A /* Constants.swift in Sources */,
 				339EF66825E0C85600832138 /* MainVC.swift in Sources */,
 				333D241625E0BDE60068F4BA /* SceneDelegate.swift in Sources */,
 				339EF68725E3053B00832138 /* Enum.swift in Sources */,
+				3322700D25E63AC700C113E8 /* Nodes.swift in Sources */,
 				339EF68225E304A600832138 /* Extensions.swift in Sources */,
 				33226FF325E62D5F00C113E8 /* MeetingVC.swift in Sources */,
 			);

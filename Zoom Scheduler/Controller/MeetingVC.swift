@@ -61,7 +61,7 @@ class MeetingVC: UIViewController {
     }()
     
     
-    let formItems = ["item1", "item2", "item3"]
+    
     // ask for
     // meeting name - textfield
     // meeting url - textfield
@@ -69,14 +69,31 @@ class MeetingVC: UIViewController {
     // start time - picker view
     // end time - picker view
     // professor name = textfield
+    // Form consists of many pickerviews and textfields to populate meeting object...
+    
+    var meetingNodes: [BaseNode] = [
+        // meeitng name
+        TextfieldNode(name: TextFieldNodeName.meetingName, input: nil, prompt: FieldNodePrompt.meetingName.rawValue),
+        //formToEdit.meetingName?.description
+        //Meeting URL
+        TextfieldNode(name: TextFieldNodeName.meetingURL, input: nil, prompt: FieldNodePrompt.meetingURL.rawValue),
+        // Day of meeting
+        PickerViewNode(name: PickerViewNodeName.day, input: nil, prompt: FieldNodePrompt.day.rawValue),
+        // Start time
+        PickerViewNode(name: PickerViewNodeName.startTime, input: nil, prompt: FieldNodePrompt.startTime.rawValue),
+        // End time
+        PickerViewNode(name: PickerViewNodeName.endTime, input: nil, prompt: FieldNodePrompt.endTime.rawValue),
+        // Professor name
+        TextfieldNode(name: TextFieldNodeName.professorName, input: nil, prompt: FieldNodePrompt.professorName.rawValue)
+    ]
     
     override func viewDidLoad() {
         view.backgroundColor = .white
         addLayout()
         addGestures()
-        formTable.register(FormCell.self, forCellReuseIdentifier: "FormCell")
-        formTable.delegate = self
-        formTable.dataSource = self
+        formTable.setup(cells: [(TextfieldCell.self,TextfieldCell.id),
+                                (PickerviewCell.self,PickerviewCell.id)],
+                                 delegate: self, dataSource: self)
         formTable.tableFooterView = UIView()
     }
     
