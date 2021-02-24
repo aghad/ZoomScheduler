@@ -12,17 +12,29 @@ import UIKit
 extension MeetingVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return formItems.count
+        return meetingNodes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let formCell = tableView.dequeueReusableCell(withIdentifier: FormCell.id, for: indexPath) as? FormCell {
-            let data = formItems[indexPath.row]
-            formCell.setup(data: data)
-            return formCell
-        } else {
-            return UITableViewCell()
+        // get type of form node
+        let meetingNode = meetingNodes[indexPath.row]
+        
+        switch meetingNode.type {
+        case .textfield:
+            if let textFieldCell = tableView.dequeueReusableCell(withIdentifier: TextfieldCell.id, for: indexPath) as? TextfieldCell, let node = meetingNode as? TextfieldNode {
+                textFieldCell.setup(node: node)
+                return textFieldCell
+            } else {
+                return UITableViewCell()
+            }
+        case .pickerview:
+            if let pickerViewCell = tableView.dequeueReusableCell(withIdentifier: PickerviewCell.id, for: indexPath) as? PickerviewCell, let node = meetingNode as? PickerViewNode {
+                pickerViewCell.setup(node: node)
+                return pickerViewCell
+            } else {
+                return UITableViewCell()
+            }
         }
     }
     
@@ -30,5 +42,15 @@ extension MeetingVC: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // resign any textfield delegate keyboard when scrolling
+        for cell in formTable.visibleCells {
+            if let textFieldCell = cell as? TextfieldCell {
+                textFieldCell.textField.resignFirstResponder()
+            }
+        }
+    }
     
 }

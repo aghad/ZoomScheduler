@@ -6,3 +6,65 @@
 //
 
 import Foundation
+import UIKit
+
+
+// our form can get user input through
+// text input w a textfield,
+// or by selecting picker view value
+enum NodeType {
+    case textfield
+    case pickerview
+}
+
+// base class for table view cell
+// cells must share common base class
+// this is so we can display differnet types
+// of cells in one table view
+class BaseNode {
+    var type: NodeType
+    
+    init(type: NodeType) {
+        self.type = type
+    }
+}
+
+
+
+// picker view cell will inherit from this class
+class PickerViewNode: BaseNode {
+    // input is int because we expect a day or time
+    // which is type int
+    var input: Int? = nil
+    // ask user to select x
+    var prompt: String = ""
+    var name: PickerViewNodeName = .day
+    
+    // initialize node
+    init(name: PickerViewNodeName, input: Int?, prompt: String) {
+        super.init(type: .pickerview)
+        self.input = input
+        self.prompt = prompt
+        self.name = name
+    }
+}
+
+
+
+// textfield cell will inherit from this class
+class TextfieldNode: BaseNode {
+    // expect any existing input to be a string
+    // ex: a meeting name
+    var input: String? = nil
+    // ask user to type in x
+    var prompt: String = ""
+    var name: TextFieldNodeName = .meetingName
+    
+    // initialize node
+    init(name: TextFieldNodeName, input: String?, prompt: String) {
+        super.init(type: .textfield)
+        self.input = input
+        self.prompt = prompt
+        self.name = name
+    }
+}

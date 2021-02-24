@@ -82,3 +82,21 @@ extension UIImage {
         return self.withAlignmentRectInsets(UIEdgeInsets(top: val, left: val, bottom: val, right: val))
     }
 }
+
+// ex: TextfieldCell.self, "TextfieldCell"
+typealias cellClass = (cellClass: AnyClass?, reuseId: String)
+
+extension UITableView {
+    // register more than one type of cell when we have
+    // muiltiple types of table view cells
+    func setup(cells: [cellClass], delegate: UITableViewDelegate?, dataSource: UITableViewDataSource?, separatorStyle: UITableViewCell.SeparatorStyle = .none, rowHeight: CGFloat? = nil) {
+        // set delegate and datasource once
+        self.delegate = delegate
+        self.dataSource = dataSource
+        // register each type of cell
+        for cell in cells {
+            self.register(cell.cellClass, forCellReuseIdentifier: cell.reuseId)
+        }
+        self.reloadData()
+    }
+}
