@@ -10,16 +10,16 @@ import UIKit
 import RealmSwift
 
 class MainVC: UIViewController {
-             
+    
     // Setup Realm
-       
-        var realm = try! Realm()
-        var notificationToken: NotificationToken? = nil
-        var results: Results<ZoomMeeting>?
-        
-        deinit {
-            notificationToken?.invalidate()
-        }
+    
+    var realm = try! Realm()
+    var notificationToken: NotificationToken? = nil
+    var results: Results<ZoomMeeting>?
+    
+    deinit {
+        notificationToken?.invalidate()
+    }
     
     // 'My Meetings' title
     let myMeetingsLbl: UILabel = {
@@ -70,8 +70,8 @@ class MainVC: UIViewController {
     // only include days we have meetings
     // ex: no meeting on Sunday, so do not include as a sections
     var sections: [Section] = []
-
-
+    
+    
     override func viewDidLoad() {
         view.backgroundColor = .white
         meetingTable.register(MeetingCell.self, forCellReuseIdentifier: "MeetingCell")
@@ -81,7 +81,7 @@ class MainVC: UIViewController {
         meetingTable.tableFooterView = UIView()
         addLayout()
         setRealm()
-        let meetings = ZoomMeeting(meetingName: "temp", professorName: "temp1", startTime: 1, endTime: 2, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 3)
+        //let meetings = ZoomMeeting(meetingName: "temp", professorName: "temp1", startTime: 1, endTime: 2, meetringURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 3)
         //self.realm.addMeeting(meetings)
         //self.realm.deleteRealm()
         addGestures()
@@ -95,35 +95,41 @@ class MainVC: UIViewController {
         addMeetingImgVw.addLayout(parentVw: self.view, trailing: (self.view.trailingAnchor, 0), vert: myMeetingsLbl.centerYAnchor, height: Padding.addSize, width: Padding.addSize)
         meetingTable.addLayout(parentVw: self.view, leading: (self.view.leadingAnchor, 0), trailing: (self.view.trailingAnchor, 0), top: (myMeetingsLbl.bottomAnchor, Padding.spacing), bottom: (self.view.bottomAnchor, 0))
     }
-
+    
     func setRealm() {
-            // if there are any changes to local data (deletions, additions, edits), then update results
-            results = realm.objects(ZoomMeeting.self)
-            
-            // Observe Results Notifications
-            notificationToken = results?.observe { [weak self] (changes: RealmCollectionChange) in
-                guard let _results = self?.results else {
-                    return
-                }
-                self?.results = _results
-                
-                // sort out meetings into sections, sort by day of the week
-                // Monday (0) has precedence over Tuesday (1)
-                // sort by day, which is an Int value
-                let dayDict = Dictionary(grouping: (self?.results?.sorted(by: {$0.dayOfWeek < $1.dayOfWeek}))!, by: { Int($0.dayOfWeek)})
-             
-                    
-                self?.sections = dayDict.keys.sorted().map { key in
-                    Section(title: weekDays[key] ?? "", items: dayDict[key] ?? [])
-                }
-                
-                // if any changes, reload table
-                self?.meetingTable.reloadData()
+        // if there are any changes to local data (deletions, additions, edits), then update results
+        results = realm.objects(ZoomMeeting.self)
+        
+        // Observe Results Notifications
+        notificationToken = results?.observe { [weak self] (changes: RealmCollectionChange) in
+            guard let _results = self?.results else {
+                return
             }
+            self?.results = _results
+            
+            // sort out meetings into sections, sort by day of the week
+            // Monday (0) has precedence over Tuesday (1)
+            // sort by day, which is an Int value
+            let dayDict = Dictionary(grouping: (self?.results?.sorted(by: {$0.dayOfWeek < $1.dayOfWeek}))!, by: { Int($0.dayOfWeek)})
+            
+            
+            self?.sections = dayDict.keys.sorted().map { key in
+                Section(title: weekDays[key] ?? "", items: dayDict[key] ?? [])
+            }
+            
+            // if any changes, reload table
+            self?.meetingTable.reloadData()
         }
+    }
     @objc func addTapped(){
         print("tapped")
+        // provide feedback to user so they know they tapped button
         addHapticFeedback()
+        
+        // show meetingVC
+        let vc = MeetingVC()
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
     func addGestures() {
