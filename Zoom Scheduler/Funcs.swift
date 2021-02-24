@@ -39,5 +39,17 @@ extension Realm {
             }
         }
     }
-    
 }
+
+func createURL(url: String) -> URL? {
+    // allow special characters
+    guard let escapedUrlStr = url.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else { return nil }
+    // return string as URL representaion
+    return URL(string: escapedUrlStr)
+}
+
+func isURlValid(url: URL) -> Bool {
+    var isValid = UIApplication.shared.canOpenURL(url as URL)
+    return isValid
+}
+
