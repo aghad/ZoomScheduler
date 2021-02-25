@@ -40,13 +40,40 @@ class Zoom_SchedulerTests: XCTestCase {
         let isValid = isURlValid(url: url!)
         XCTAssertEqual(isValid, true)
     }
-    func testValidURL5() {
-        let url = createURL(url: "https://www.ge2wgw.com") //Testing Invalid URL
-        let isValid = isURlValid(url: url!)
-        XCTAssertEqual(isValid, true)
-        // Must use NSDataDetector to detect incorrect websites if they're true or false
-    }
-  /*  func testValidURL6() {
+ 
+    func testVerifyURL (urlString: String?) -> Bool {
+       if let urlString = urlString {
+           if let url = NSURL(string: urlString) {
+               return UIApplication.shared.canOpenURL(url as URL)
+           }
+       }
+       return false
+   }
+  
+    
+    func testDayDictValid() {
+            let dictValue = weekDays[0]
+            XCTAssertEqual(dictValue, "Monday")
+        }
+        
+        func testDayDictInvalid() {
+            let dictValue = weekDays[10]
+            XCTAssertEqual(dictValue, nil)
+        }
+        
+        func testTimeDictValid() {
+            let dictValue = timeOfDay[131]
+            XCTAssertEqual(dictValue, "11:55")
+        }
+        
+        func testTimeDictInvalid() {
+            let dictValue = timeOfDay[1000]
+            XCTAssertEqual(dictValue, nil)
+        }
+    
+}
+    /*
+      func testValidURL6() {
         let url = createURL(url: "https://www.234234242.com") //Testing Invalid URL
         let isValid = isURlValid(url: url!)
         XCTAssertEqual(isValid, false)
@@ -72,11 +99,10 @@ class Zoom_SchedulerTests: XCTestCase {
         XCTAssertEqual(isValid, false)
     }
     
-    */
     
 }
 
-    
+    */
     
 /*
     
