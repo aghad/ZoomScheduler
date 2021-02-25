@@ -11,6 +11,9 @@ import UIKit
 
 class PickerviewCell: UITableViewCell, UITextFieldDelegate {
     
+    var time1: String? = ""
+    var time2: String? = ""
+    
     static let id = "PickerviewCell"
     var referenceNode: PickerViewNode?
     
@@ -82,12 +85,55 @@ class PickerviewCell: UITableViewCell, UITextFieldDelegate {
 extension PickerviewCell: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 0
+        if self.referenceNode?.name == .day {
+            return 1 //one day of week
+        }
+        else {
+            return 2 //Time of day (am/pm)
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 0
+        if self.referenceNode?.name == .day {
+            if component == 0 {
+                return weekDays.count
+            } else {
+                return 0
+            }
+        } else {
+            if component == 0 {
+                return timeOfDay.count
+            } else {
+                return ampm.count
+            }
+        }
     }
-    
-    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if self.referenceNode?.name == .day {
+            if component == 0{
+                return weekDays[row]
+            } else {
+                return nil
+            }
+            
+        } else {
+            if component == 0{
+                return timeOfDay[row]
+            } else {
+                return ampm[row]
+            }
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if self.referenceNode?.name == .day {
+            textField.text = weekDays[row]
+        } else {
+            if component == 0 {
+                self.time1 = timeOfDay[row]
+            } else {
+                self.time2 = ampm[row]
+            }
+            textField.text = "\(self.time1!) \(self.time2!)"
+        }
+    }
 }
