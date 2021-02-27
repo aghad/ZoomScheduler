@@ -51,7 +51,6 @@ class PickerviewCell: UITableViewCell, UITextFieldDelegate {
         self.referenceNode = node
         fieldLbl.text = node.name.rawValue
         textField.placeholder = node.prompt
-    
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -77,6 +76,13 @@ class PickerviewCell: UITableViewCell, UITextFieldDelegate {
         textField.addLayout(parentVw: self.contentView, leading: (self.contentView.leadingAnchor, 20), trailing: (self.contentView.trailingAnchor, -20), top: (fieldLbl.bottomAnchor, 0), bottom: (self.contentView.bottomAnchor,-10), height: 50)
     }
     
+    
+    // resign textfield delegate when scrolling
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if textField.isFirstResponder {
+            textField.resignFirstResponder()
+        }
+    }
 
     
 }
@@ -127,13 +133,21 @@ extension PickerviewCell: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if self.referenceNode?.name == .day {
             textField.text = weekDays[row]
+            if let text = textField.text {
+            referenceNode?.input = fromWeekDays[text]
+            }
         } else {
             if component == 0 {
+                // ex: 5:00
                 self.time1 = timeOfDay[row]
             } else {
+                //ex: pm
                 self.time2 = ampm[row]
             }
             textField.text = "\(self.time1!) \(self.time2!)"
+            if let text = textField.text {
+                referenceNode?.input = timeMapFrom[text]
+            }
         }
     }
 }
