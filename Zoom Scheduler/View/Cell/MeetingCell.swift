@@ -39,7 +39,8 @@ class MeetingCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.isUserInteractionEnabled = true
         lbl.textColor = .gray
-        lbl.adjustsFontSizeToFitWidth = false
+        lbl.minimumScaleFactor = 0.8
+        lbl.adjustsFontSizeToFitWidth = true
         lbl.baselineAdjustment = .none
         lbl.numberOfLines = 1
         return lbl
@@ -50,7 +51,8 @@ class MeetingCell: UITableViewCell {
         lbl.font = UIFont(name: "Avenir-Medium", size: 18)!
         lbl.textAlignment = .left
         lbl.isUserInteractionEnabled = true
-        lbl.adjustsFontSizeToFitWidth = false
+        lbl.minimumScaleFactor = 0.8
+        lbl.adjustsFontSizeToFitWidth = true
         lbl.textColor = .gray
         lbl.numberOfLines = 1
         return lbl
@@ -99,7 +101,7 @@ class MeetingCell: UITableViewCell {
         static let center: CGFloat = 20
         static let labelSpace: CGFloat = 5
         static let btnWidth: CGFloat = 110
-        static let lblWidth: CGFloat = 45
+        static let lblWidth: CGFloat = 65
     }
   
     
@@ -124,8 +126,8 @@ class MeetingCell: UITableViewCell {
         meetingNameLbl.text = meeting.meetingName
         professorLbl.text = meeting.professorName
         
-        startTimeLbl.text = timeOfDay[meeting.startTime]
-        endTimeLbl.text = timeOfDay[meeting.endTime]
+        startTimeLbl.text = timeMapto[meeting.startTime]
+        endTimeLbl.text = timeMapto[meeting.endTime]
         
         layoutCell()
         addGestures()
