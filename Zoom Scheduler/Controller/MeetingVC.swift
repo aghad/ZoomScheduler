@@ -30,6 +30,7 @@ class MeetingVC: UIViewController {
         table.separatorStyle = .none
         return table
     }()
+     
     
     // 'Add Meeting' title
     let addMeetingLbl: UILabel = {
