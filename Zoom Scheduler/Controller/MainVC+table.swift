@@ -29,8 +29,8 @@ extension MainVC : UITableViewDelegate, UITableViewDataSource {
         }
     
     
-    
     //swiping right to delete meeting
+    @available(iOS 11, *)
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
             let action = UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, completionHandler) in
                 
