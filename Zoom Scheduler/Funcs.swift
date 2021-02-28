@@ -60,9 +60,9 @@ func addHapticFeedback(style: UIImpactFeedbackGenerator.FeedbackStyle = .medium)
 }
 
 func isStringValid(str: String) -> Bool {
-return str.count > 0 ? true: false
+return str.count > 0 ? true : false
 }
 
-func TimeSelectionValid(time1: Int, time2: Int) -> Bool {
+func isTimeSelectionValid(time1: Int, time2: Int) -> Bool {
 return time1 < time2 ? true : false
 }

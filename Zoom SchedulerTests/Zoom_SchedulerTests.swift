@@ -71,31 +71,33 @@ class Zoom_SchedulerTests: XCTestCase {
         return false
     }
     
-    func TestisStringValidFalse(){
+    func testisStringValidFalse(){
         let str = ""
         let isValid = isStringValid(str: str)
         XCTAssertEqual(isValid, false)
     }
     
-    func TestisStringValidTrue(){
+    func testisStringValidTrue(){
         let str = "Class"
         let isValid = isStringValid(str: str)
         XCTAssertEqual(isValid, true)
     }
     
-    func TestValidTimeFalse() {
+    func testValidTimeFalse() {
         let time1 = 5
         let time2 = 3
-        let isValid = TimeSelectionValid(time1: time1, time2: time2)
+        let isValid = isTimeSelectionValid(time1: time1, time2: time2)
         XCTAssertEqual(isValid, false)
     }
     
-    func TestValidTimeTrue() {
+    func testValidTimeTrue() {
         let time1 = 3
         let time2 = 5
-        let isValid = TimeSelectionValid(time1: time1, time2: time2)
+        let isValid = isTimeSelectionValid(time1: time1, time2: time2)
         XCTAssertEqual(isValid, true)
     }
+    
+}
     
 //    func testDayDictValid() {
 //        let dictValue = weekDays[0]
@@ -118,7 +120,7 @@ class Zoom_SchedulerTests: XCTestCase {
 //    }
 //
 
-}
+//}
 
     /*
       func testValidURL6() {
