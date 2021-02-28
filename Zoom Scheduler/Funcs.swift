@@ -63,4 +63,6 @@ func isStringValid(str: String) -> Bool {
 return str.count > 0 ? true: false
 }
 
-
+func TimeSelectionValid(time1: Int, time2: Int) -> Bool {
+return time1 < time2 ? true : false
+}
