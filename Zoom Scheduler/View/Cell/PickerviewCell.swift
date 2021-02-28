@@ -49,6 +49,18 @@ class PickerviewCell: UITableViewCell, UITextFieldDelegate {
     
     func setup(node: PickerViewNode) {
         self.referenceNode = node
+        
+        // has previous input
+        if let input = node.input {
+            if node.name == .day {
+                textField.text = weekDays[input]
+            } else {
+                textField.text = timeMapto[input]
+            }
+        } else { // no input set yet
+            textField.text = nil
+        }
+        
         fieldLbl.text = node.name.rawValue
         textField.placeholder = node.prompt
     }

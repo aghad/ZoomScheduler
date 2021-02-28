@@ -63,6 +63,13 @@ class TextfieldCell: UITableViewCell, UITextFieldDelegate {
     
     func setup(node: TextfieldNode) {
         self.referenceNode = node
+        
+        if let input = node.input { // has previous input
+            textField.text = input
+        } else { // no input set yet
+            textField.text = nil
+        }
+        
         // name field with what data we want input by the user
         fieldLbl.text = node.name.rawValue
         // prompt user to enter this kind of data in textield

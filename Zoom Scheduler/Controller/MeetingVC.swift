@@ -199,4 +199,38 @@ class MeetingVC: UIViewController {
         return meeting
     }
     
+    
+    // if we are editing an existing meeting
+    // update form nodes' input w meeting info
+    func setForm(meeting: ZoomMeeting) {
+        for node in meetingNodes {
+        
+            if let node = node as? TextfieldNode{
+                switch node.name {
+                case .meetingName:
+                    node.input = meeting.meetingName
+                case .meetingURL:
+                    node.input = meeting.meetingURL
+                case .professorName:
+                    node.input = meeting.professorName
+                }
+                
+            }
+            
+            if let node = node as? PickerViewNode {
+                switch node.name {
+                case .day:
+                    node.input = meeting.dayOfWeek
+                case .startTime:
+                    node.input = meeting.startTime
+                case .endTime:
+                    node.input = meeting.endTime
+                }
+            }
+        }
+        self.realm.deleteMeeting(meeting)
+    }
+
+
+    
 }
