@@ -7,8 +7,17 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class MeetingVC: UIViewController {
+    
+    var realm = try! Realm()
+        var notificationToken: NotificationToken? = nil
+
+       
+        deinit {
+               notificationToken?.invalidate()
+           }
     
     let formTable: UITableView = {
         let table = UITableView()
@@ -21,6 +30,7 @@ class MeetingVC: UIViewController {
         table.separatorStyle = .none
         return table
     }()
+     
     
     // 'Add Meeting' title
     let addMeetingLbl: UILabel = {
@@ -126,6 +136,8 @@ class MeetingVC: UIViewController {
         addHapticFeedback()
         if let meeting = parseMeetingNodes() {
             print(meeting)
+            self.realm.addMeeting(meeting) //saving meeting locally
+            self.dismiss(animated: true, completion: nil) //returning to main VC
         }
         
     }
