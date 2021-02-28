@@ -15,6 +15,7 @@ import UIKit
 enum NodeType {
     case textfield
     case pickerview
+    case emptySpace
 }
 
 // base class for table view cell
@@ -68,3 +69,15 @@ class TextfieldNode: BaseNode {
         self.name = name
     }
 }
+
+
+// add extra space to bottom of table view
+class EmptySpaceNode: BaseNode {
+    var height: CGFloat = 0
+    
+    init(height: CGFloat) {
+        super.init(type: .emptySpace)
+        self.height = height
+    }
+}
+

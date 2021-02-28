@@ -84,7 +84,9 @@ class MeetingVC: UIViewController {
         // End time
         PickerViewNode(name: PickerViewNodeName.endTime, input: nil, prompt: FieldNodePrompt.endTime.rawValue),
         // Professor name
-        TextfieldNode(name: TextFieldNodeName.professorName, input: nil, prompt: FieldNodePrompt.professorName.rawValue)
+        TextfieldNode(name: TextFieldNodeName.professorName, input: nil, prompt: FieldNodePrompt.professorName.rawValue),
+        // Add empty space to see all cells
+        EmptySpaceNode(height: 350)
     ]
     
     override func viewDidLoad() {
@@ -92,7 +94,8 @@ class MeetingVC: UIViewController {
         addLayout()
         addGestures()
         formTable.setup(cells: [(TextfieldCell.self,TextfieldCell.id),
-                                (PickerviewCell.self,PickerviewCell.id)],
+                                (PickerviewCell.self,PickerviewCell.id),
+                                (EmptySpaceCell.self, EmptySpaceCell.id)],
                                  delegate: self, dataSource: self)
         formTable.tableFooterView = UIView()
     }
@@ -118,9 +121,70 @@ class MeetingVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc func saveTapped() {
+        print("save")
+        addHapticFeedback()
+        if let meeting = parseMeetingNodes() {
+            print(meeting)
+        }
+        
+    }
+    
     func addGestures() {
         let backTap = UITapGestureRecognizer(target: self, action: #selector(backTapped))
         backImgVw.addGestureRecognizer(backTap)
+        
+        let saveTap = UITapGestureRecognizer(target: self, action: #selector(saveTapped))
+        saveLbl.addGestureRecognizer(saveTap)
+    }
+    
+    
+    func parseMeetingNodes() -> ZoomMeeting? {
+        var meetingName: String?
+        var professorName: String?
+        var meetingURL: String?
+        var day: Int?
+        var startTime: Int?
+        var endTime: Int?
+        
+        for node in meetingNodes {
+        
+            if let node = node as? TextfieldNode{
+                switch node.name {
+                case .meetingName:
+                    meetingName = node.input
+                case .meetingURL:
+                    meetingURL = node.input
+                case .professorName:
+                    professorName = node.input
+                }
+                
+            }
+            
+            if let node = node as? PickerViewNode {
+                switch node.name {
+                case .day:
+                    day = node.input
+                case .startTime:
+                    startTime = node.input
+                case .endTime:
+                    endTime = node.input
+                }
+            }
+            
+        }
+        
+        guard let _meetingName = meetingName,
+              let _professorName = professorName,
+              let _startTime = startTime,
+              let _endTime = endTime,
+              let _meetingURL = meetingURL,
+              let _day = day else { return nil }
+        
+        
+        let meeting = ZoomMeeting(meetingName: _meetingName, professorName: _professorName, startTime: _startTime, endTime: _endTime, meetingURL: _meetingURL, dayOfWeek: _day)
+        
+        return meeting
     }
     
 }
