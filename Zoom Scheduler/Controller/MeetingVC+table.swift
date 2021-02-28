@@ -35,6 +35,13 @@ extension MeetingVC: UITableViewDelegate, UITableViewDataSource {
             } else {
                 return UITableViewCell()
             }
+        case .emptySpace:
+            if let emptySpaceCell = tableView.dequeueReusableCell(withIdentifier: EmptySpaceCell.id, for: indexPath) as? EmptySpaceCell, let node = meetingNode as? EmptySpaceNode {
+                emptySpaceCell.setup(node: node)
+                return emptySpaceCell
+            } else {
+                return UITableViewCell()
+            }
         }
     }
     

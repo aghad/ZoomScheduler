@@ -9,6 +9,27 @@ import XCTest
 @testable import Zoom_Scheduler
 
 class Zoom_SchedulerTests: XCTestCase {
+    
+    
+    func testDayDictValid() {
+        let dictValue = weekDays[0]
+        XCTAssertEqual(dictValue, "Monday")
+    }
+    
+    func testDayDictInvalid() {
+        let dictValue = weekDays[10]
+        XCTAssertEqual(dictValue, nil)
+    }
+    
+    func testTimeDictValid() {
+        let dictValue = timeOfDay[131]
+        XCTAssertEqual(dictValue, "11:55")
+    }
+    
+    func testTimeDictInvalid() {
+        let dictValue = timeOfDay[1000]
+        XCTAssertEqual(dictValue, nil)
+    }
 
     func testValidURL() {
         let url = createURL(url: "https://www.google.com") //Testing Valid URL
@@ -103,6 +124,10 @@ class Zoom_SchedulerTests: XCTestCase {
 }
 
     */
+    
+}
+
+    
     
 /*
     

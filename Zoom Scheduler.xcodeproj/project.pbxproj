@@ -17,6 +17,7 @@
 		333D241D25E0BDE80068F4BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 333D241C25E0BDE80068F4BA /* Assets.xcassets */; };
 		333D242B25E0BDE80068F4BA /* Zoom_SchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D242A25E0BDE80068F4BA /* Zoom_SchedulerTests.swift */; };
 		333D243625E0BDE80068F4BA /* Zoom_SchedulerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D243525E0BDE80068F4BA /* Zoom_SchedulerUITests.swift */; };
+		3351F8E925EAF93200501D37 /* EmptySpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3351F8E825EAF93200501D37 /* EmptySpaceCell.swift */; };
 		339EF66825E0C85600832138 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF66725E0C85600832138 /* MainVC.swift */; };
 		339EF68225E304A600832138 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF68125E304A600832138 /* Extensions.swift */; };
 		339EF68725E3053B00832138 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF68625E3053B00832138 /* Enum.swift */; };
@@ -65,6 +66,7 @@
 		333D243125E0BDE80068F4BA /* Zoom SchedulerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zoom SchedulerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		333D243525E0BDE80068F4BA /* Zoom_SchedulerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zoom_SchedulerUITests.swift; sourceTree = "<group>"; };
 		333D243725E0BDE80068F4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3351F8E825EAF93200501D37 /* EmptySpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySpaceCell.swift; sourceTree = "<group>"; };
 		339EF66725E0C85600832138 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		339EF68125E304A600832138 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		339EF68625E3053B00832138 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				339EF69425E3173500832138 /* MeetingCell.swift */,
 				3322701125E63C7600C113E8 /* TextfieldCell.swift */,
 				3322701625E63D7E00C113E8 /* PickerviewCell.swift */,
+				3351F8E825EAF93200501D37 /* EmptySpaceCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				3322701725E63D7E00C113E8 /* PickerviewCell.swift in Sources */,
 				3F27F48C25E4D38400B2A14A /* Constants.swift in Sources */,
 				339EF66825E0C85600832138 /* MainVC.swift in Sources */,
+				3351F8E925EAF93200501D37 /* EmptySpaceCell.swift in Sources */,
 				333D241625E0BDE60068F4BA /* SceneDelegate.swift in Sources */,
 				339EF68725E3053B00832138 /* Enum.swift in Sources */,
 				3322700D25E63AC700C113E8 /* Nodes.swift in Sources */,
@@ -639,7 +643,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NZJ8Q663S8;
+				DEVELOPMENT_TEAM = 6DJ78292P6;
 				INFOPLIST_FILE = "Zoom Scheduler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -659,7 +663,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NZJ8Q663S8;
+				DEVELOPMENT_TEAM = 6DJ78292P6;
 				INFOPLIST_FILE = "Zoom Scheduler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
