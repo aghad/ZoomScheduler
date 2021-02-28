@@ -11,7 +11,22 @@ import UIKit
 
 extension MainVC : UITableViewDelegate, UITableViewDataSource {
     
-
+    //swiping right to delete meeting
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+            let action = UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, completionHandler) in
+                
+                // remove item from Realm
+                self.realm.deleteMeeting(self.sections[indexPath.section].items[indexPath.row])
+                self.meetingTable.reloadData()
+                completionHandler(true)
+            })
+            action.backgroundColor = .systemRed
+            let configuration = UISwipeActionsConfiguration(actions: [action])
+            return configuration
+        }
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].items.count
     }
