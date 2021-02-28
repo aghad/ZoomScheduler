@@ -15,7 +15,6 @@ class TextfieldCell: UITableViewCell, UITextFieldDelegate {
     // keep refence of node passed in
     // so we can access type, name, etc.
     var referenceNode: TextfieldNode?
-    var fieldType: TextFieldNodeName?
     
     let fieldLbl: UILabel = {
         let lbl = UILabel()
