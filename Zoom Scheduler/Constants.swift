@@ -16,6 +16,11 @@ struct Section {
     var items: [ZoomMeeting]
 }
 
+struct ValidateLog {
+    var isValid: Bool
+    var errorMessage: String?
+}
+
 
 //dictionary of days of week (Key,Value) = (Int, String) = (key, Day)
 var weekDays: [Int:String] = [0:"Monday", 1:"Tuesday", 2:"Wednesday", 3:"Thursday", 4:"Friday", 5:"Saturday", 6:"Sunday"]
