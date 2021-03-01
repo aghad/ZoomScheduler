@@ -9,7 +9,7 @@ import Foundation
 
 // type of strategy
 protocol ValidateStrategy {
-    func validate(_ meeting: ZoomMeeting) -> ValidateLog
+    func validate(_ meeting: ZoomMeeting) -> Bool
 }
 
 
@@ -18,36 +18,36 @@ protocol ValidateStrategy {
 struct Validate {
     let strategy: ValidateStrategy
     
-    func validate(_ meeting: ZoomMeeting) -> ValidateLog {
+    func validate(_ meeting: ZoomMeeting) -> Bool {
         return strategy.validate(meeting)
     }
 }
 
 // validate string inputs like meeting name and professor name
 struct StringValidation: ValidateStrategy {
-    func validate(_ meeting: ZoomMeeting) -> ValidateLog {
-     return ValidateLog(isValid: false, errorMessage: nil)
+    func validate(_ meeting: ZoomMeeting) -> Bool {
+     return false
     }
 }
 
 
 // validate url before saving it
 struct URLValidation: ValidateStrategy {
-    func validate(_ meeting: ZoomMeeting) -> ValidateLog {
-     return ValidateLog(isValid: false, errorMessage: nil)
+    func validate(_ meeting: ZoomMeeting) -> Bool {
+     return false
     }
 }
 
 // make sure start and end times are valid
 struct TimeValidation: ValidateStrategy {
-    func validate(_ meeting: ZoomMeeting) -> ValidateLog {
-        return ValidateLog(isValid: false, errorMessage: nil)
+    func validate(_ meeting: ZoomMeeting) -> Bool {
+        return false
     }
 }
 
 // make sure day input is one of 7 days
 struct DayValidation: ValidateStrategy {
-    func validate(_ meeting: ZoomMeeting) -> ValidateLog {
-        return ValidateLog(isValid: false, errorMessage: nil)
+    func validate(_ meeting: ZoomMeeting) -> Bool {
+        return false
     }
 }

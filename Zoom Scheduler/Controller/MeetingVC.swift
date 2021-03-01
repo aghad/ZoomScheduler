@@ -83,18 +83,17 @@ class MeetingVC: UIViewController {
     
     var meetingNodes: [BaseNode] = [
         // meeitng name
-        TextfieldNode(name: TextFieldNodeName.meetingName, input: nil, prompt: FieldNodePrompt.meetingName.rawValue, strategy: Validate(strategy: URLValidation())),
-        //formToEdit.meetingName?.description
+        TextfieldNode(name: TextFieldNodeName.meetingName, input: nil, prompt: FieldNodePrompt.meetingName.rawValue, strategy: Validate(strategy: URLValidation()), error: TextFieldNodeError.meetingName),
         //Meeting URL
-        TextfieldNode(name: TextFieldNodeName.meetingURL, input: nil, prompt: FieldNodePrompt.meetingURL.rawValue, strategy: Validate(strategy: URLValidation())),
+        TextfieldNode(name: TextFieldNodeName.meetingURL, input: nil, prompt: FieldNodePrompt.meetingURL.rawValue, strategy: Validate(strategy: URLValidation()), error: TextFieldNodeError.meetingURL),
         // Day of meeting
-        PickerViewNode(name: PickerViewNodeName.day, input: nil, prompt: FieldNodePrompt.day.rawValue, strategy: Validate(strategy: DayValidation())),
+        PickerViewNode(name: PickerViewNodeName.day, input: nil, prompt: FieldNodePrompt.day.rawValue, strategy: Validate(strategy: DayValidation()), error: PickerViewNodeError.day),
         // Start time
-        PickerViewNode(name: PickerViewNodeName.startTime, input: nil, prompt: FieldNodePrompt.startTime.rawValue, strategy: Validate(strategy: TimeValidation())),
+        PickerViewNode(name: PickerViewNodeName.startTime, input: nil, prompt: FieldNodePrompt.startTime.rawValue, strategy: Validate(strategy: TimeValidation()), error: PickerViewNodeError.startTime),
         // End time
-        PickerViewNode(name: PickerViewNodeName.endTime, input: nil, prompt: FieldNodePrompt.endTime.rawValue, strategy: Validate(strategy: TimeValidation())),
+        PickerViewNode(name: PickerViewNodeName.endTime, input: nil, prompt: FieldNodePrompt.endTime.rawValue, strategy: Validate(strategy: TimeValidation()), error: PickerViewNodeError.endTime),
         // Professor name
-        TextfieldNode(name: TextFieldNodeName.professorName, input: nil, prompt: FieldNodePrompt.professorName.rawValue, strategy: Validate(strategy: StringValidation())),
+        TextfieldNode(name: TextFieldNodeName.professorName, input: nil, prompt: FieldNodePrompt.professorName.rawValue, strategy: Validate(strategy: StringValidation()), error: TextFieldNodeError.professorName),
         // Add empty space to see all cells
         EmptySpaceNode(height: 350)
     ]
@@ -147,12 +146,12 @@ class MeetingVC: UIViewController {
             self.realm.addMeeting(meeting) //saving meeting locally
             self.dismiss(animated: true, completion: nil) //returning to main VC
             } else {
-                // display error messages
-                print("error\(String(describing: errorMessage))")
+                // display respective error message
+                showErrorAlert(message: errorMessage!)
             }
         } else {
-            // later display error message
-            print("need to fill out all fields")
+            // display error message
+            showErrorAlert(message: "All fields are required.")
         }
         
     }
@@ -248,37 +247,40 @@ class MeetingVC: UIViewController {
 
     // return if form is valid along w any error messages
     func isFormValid(meeting: ZoomMeeting) -> ValidateLog {
-        var isValid: Bool = false
-        var errorMessage: String? = nil
-        
+    
         for node in meetingNodes {
             if let node = node as? TextfieldNode{
                 // let nodes' strategy handle validation
                 // for it's type of textfield validation
-                let validate = node.strategy?.validate(meeting)
-                isValid = (validate?.isValid == true)
-                errorMessage = validate?.errorMessage
+                let isValid = node.strategy?.validate(meeting)
+
                 
                 // return on first error, only show that message
-                if !isValid {
-                    return ValidateLog(isValid: isValid, errorMessage: errorMessage)
+                if !isValid! {
+                    return ValidateLog(isValid: isValid!, errorMessage: node.error?.rawValue)
                 }
                 
             } else if let node = node as? PickerViewNode {
                 // let nodes' strategy handle validation
                 // for it's type of picker view validation
-                let validate = node.strategy?.validate(meeting)
-                isValid = (validate?.isValid == true)
-                errorMessage = validate?.errorMessage
+                let isValid = node.strategy?.validate(meeting)
                 
                 // return on first error
-                if !isValid {
-                    return ValidateLog(isValid: isValid, errorMessage: errorMessage)
+                if !isValid! {
+                    return ValidateLog(isValid: isValid!, errorMessage: node.error?.rawValue)
                 }
             }
         }
         // no errors, nil error message
-        return ValidateLog(isValid: isValid, errorMessage: errorMessage)
+        return ValidateLog(isValid: true, errorMessage: nil)
+    }
+    
+    
+    func showErrorAlert(message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "ok", style: .default, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

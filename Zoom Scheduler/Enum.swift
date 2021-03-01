@@ -41,14 +41,14 @@ enum PickerViewNodeName: String {
 // error to display
 enum TextFieldNodeError: String {
     case meetingName = "Meeting name is required."
-    case meetingURL = "Meeting URL is required."
+    case meetingURL = "Please enter a valid meeting URL."
     case professorName = "Professor name is required."
 }
 // error to display
 enum PickerViewNodeError: String {
     case day = "Please select meeting day."
-    case startTime = "Please select meeting start time."
-    case endTime = "Please select meeting end time."
+    case startTime = "Please select valid meeting start time."
+    case endTime = "Please select valid meeting end time."
 }
 
 
