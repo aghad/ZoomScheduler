@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 
 extension MainVC : UITableViewDelegate, UITableViewDataSource {
@@ -17,8 +18,7 @@ extension MainVC : UITableViewDelegate, UITableViewDataSource {
                 let vc = MeetingVC()
                 vc.modalPresentationStyle = .overFullScreen
                 let meeting = self.sections[indexPath.section].items[indexPath.row]
-                print(meeting)
-                //need to pass this later
+                vc.setForm(meeting: meeting)
                 self.present(vc, animated: true, completion: nil)
                 
                 completionHandler(true)

@@ -83,18 +83,17 @@ class MeetingVC: UIViewController {
     
     var meetingNodes: [BaseNode] = [
         // meeitng name
-        TextfieldNode(name: TextFieldNodeName.meetingName, input: nil, prompt: FieldNodePrompt.meetingName.rawValue),
-        //formToEdit.meetingName?.description
+        TextfieldNode(name: TextFieldNodeName.meetingName, input: nil, prompt: FieldNodePrompt.meetingName.rawValue, strategy: Validate(strategy: URLValidation()), error: TextFieldNodeError.meetingName),
         //Meeting URL
-        TextfieldNode(name: TextFieldNodeName.meetingURL, input: nil, prompt: FieldNodePrompt.meetingURL.rawValue),
+        TextfieldNode(name: TextFieldNodeName.meetingURL, input: nil, prompt: FieldNodePrompt.meetingURL.rawValue, strategy: Validate(strategy: URLValidation()), error: TextFieldNodeError.meetingURL),
         // Day of meeting
-        PickerViewNode(name: PickerViewNodeName.day, input: nil, prompt: FieldNodePrompt.day.rawValue),
+        PickerViewNode(name: PickerViewNodeName.day, input: nil, prompt: FieldNodePrompt.day.rawValue, strategy: Validate(strategy: DayValidation()), error: PickerViewNodeError.day),
         // Start time
-        PickerViewNode(name: PickerViewNodeName.startTime, input: nil, prompt: FieldNodePrompt.startTime.rawValue),
+        PickerViewNode(name: PickerViewNodeName.startTime, input: nil, prompt: FieldNodePrompt.startTime.rawValue, strategy: Validate(strategy: TimeValidation()), error: PickerViewNodeError.startTime),
         // End time
-        PickerViewNode(name: PickerViewNodeName.endTime, input: nil, prompt: FieldNodePrompt.endTime.rawValue),
+        PickerViewNode(name: PickerViewNodeName.endTime, input: nil, prompt: FieldNodePrompt.endTime.rawValue, strategy: Validate(strategy: TimeValidation()), error: PickerViewNodeError.endTime),
         // Professor name
-        TextfieldNode(name: TextFieldNodeName.professorName, input: nil, prompt: FieldNodePrompt.professorName.rawValue),
+        TextfieldNode(name: TextFieldNodeName.professorName, input: nil, prompt: FieldNodePrompt.professorName.rawValue, strategy: Validate(strategy: StringValidation()), error: TextFieldNodeError.professorName),
         // Add empty space to see all cells
         EmptySpaceNode(height: 350)
     ]
@@ -134,10 +133,25 @@ class MeetingVC: UIViewController {
     @objc func saveTapped() {
         print("save")
         addHapticFeedback()
+        
         if let meeting = parseMeetingNodes() {
-            print(meeting)
+
+            // validate form
+            let formValidation = isFormValid(meeting: meeting)
+            let isValid = formValidation.isValid
+            let errorMessage = formValidation.errorMessage
+
+            if isValid {
+            // save meeting
             self.realm.addMeeting(meeting) //saving meeting locally
             self.dismiss(animated: true, completion: nil) //returning to main VC
+            } else {
+                // display respective error message
+                showErrorAlert(message: errorMessage!)
+            }
+        } else {
+            // display error message
+            showErrorAlert(message: "All fields are required.")
         }
         
     }
@@ -197,6 +211,76 @@ class MeetingVC: UIViewController {
         let meeting = ZoomMeeting(meetingName: _meetingName, professorName: _professorName, startTime: _startTime, endTime: _endTime, meetingURL: _meetingURL, dayOfWeek: _day)
         
         return meeting
+    }
+    
+    
+    // if we are editing an existing meeting
+    // update form nodes' input w meeting info
+    func setForm(meeting: ZoomMeeting) {
+        for node in meetingNodes {
+        
+            if let node = node as? TextfieldNode{
+                switch node.name {
+                case .meetingName:
+                    node.input = meeting.meetingName
+                case .meetingURL:
+                    node.input = meeting.meetingURL
+                case .professorName:
+                    node.input = meeting.professorName
+                }
+                
+            }
+            
+            if let node = node as? PickerViewNode {
+                switch node.name {
+                case .day:
+                    node.input = meeting.dayOfWeek
+                case .startTime:
+                    node.input = meeting.startTime
+                case .endTime:
+                    node.input = meeting.endTime
+                }
+            }
+        }
+        self.realm.deleteMeeting(meeting)
+    }
+
+    // return if form is valid along w any error messages
+    func isFormValid(meeting: ZoomMeeting) -> ValidateLog {
+    
+        for node in meetingNodes {
+            if let node = node as? TextfieldNode{
+                // let nodes' strategy handle validation
+                // for it's type of textfield validation
+                let isValid = node.strategy?.validate(meeting)
+
+                
+                // return on first error, only show that message
+                if !isValid! {
+                    return ValidateLog(isValid: isValid!, errorMessage: node.error?.rawValue)
+                }
+                
+            } else if let node = node as? PickerViewNode {
+                // let nodes' strategy handle validation
+                // for it's type of picker view validation
+                let isValid = node.strategy?.validate(meeting)
+                
+                // return on first error
+                if !isValid! {
+                    return ValidateLog(isValid: isValid!, errorMessage: node.error?.rawValue)
+                }
+            }
+        }
+        // no errors, nil error message
+        return ValidateLog(isValid: true, errorMessage: nil)
+    }
+    
+    
+    func showErrorAlert(message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "ok", style: .default, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

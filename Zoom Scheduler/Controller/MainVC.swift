@@ -110,7 +110,7 @@ class MainVC: UIViewController {
             // sort out meetings into sections, sort by day of the week
             // Monday (0) has precedence over Tuesday (1)
             // sort by day, which is an Int value
-            let dayDict = Dictionary(grouping: (self?.results?.sorted(by: {$0.dayOfWeek < $1.dayOfWeek}))!, by: { Int($0.dayOfWeek)})
+            let dayDict = Dictionary(grouping: (self?.results?.sorted(by: {$0.startTime < $1.startTime}))!, by: { Int($0.dayOfWeek)})
             
             
             self?.sections = dayDict.keys.sorted().map { key in

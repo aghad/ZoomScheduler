@@ -40,13 +40,18 @@ class PickerViewNode: BaseNode {
     // ask user to select x
     var prompt: String = ""
     var name: PickerViewNodeName = .day
+    // give node validate stetegy method
+    var strategy: Validate?
+    var error: PickerViewNodeError?
     
     // initialize node
-    init(name: PickerViewNodeName, input: Int?, prompt: String) {
+    init(name: PickerViewNodeName, input: Int?, prompt: String, strategy: Validate?, error: PickerViewNodeError?) {
         super.init(type: .pickerview)
         self.input = input
         self.prompt = prompt
         self.name = name
+        self.strategy = strategy
+        self.error = error
     }
 }
 
@@ -60,13 +65,18 @@ class TextfieldNode: BaseNode {
     // ask user to type in x
     var prompt: String = ""
     var name: TextFieldNodeName = .meetingName
+    // give node validate stetegy method
+    var strategy: Validate?
+    var error: TextFieldNodeError?
     
     // initialize node
-    init(name: TextFieldNodeName, input: String?, prompt: String) {
+    init(name: TextFieldNodeName, input: String?, prompt: String, strategy: Validate?, error: TextFieldNodeError?) {
         super.init(type: .textfield)
         self.input = input
         self.prompt = prompt
         self.name = name
+        self.strategy = strategy
+        self.error = error
     }
 }
 

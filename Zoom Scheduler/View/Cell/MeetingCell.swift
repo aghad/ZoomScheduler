@@ -27,6 +27,8 @@ class MeetingCell: UITableViewCell {
         lbl.font = UIFont(name: "Avenir-Heavy", size: 18)!
         lbl.textAlignment = .left
         lbl.isUserInteractionEnabled = true
+        lbl.minimumScaleFactor = 0.8
+        lbl.adjustsFontSizeToFitWidth = true
         lbl.textColor = .darkGray
         lbl.numberOfLines = 0
         return lbl
@@ -37,7 +39,8 @@ class MeetingCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.isUserInteractionEnabled = true
         lbl.textColor = .gray
-        lbl.adjustsFontSizeToFitWidth = false
+        lbl.minimumScaleFactor = 0.8
+        lbl.adjustsFontSizeToFitWidth = true
         lbl.baselineAdjustment = .none
         lbl.numberOfLines = 1
         return lbl
@@ -48,7 +51,8 @@ class MeetingCell: UITableViewCell {
         lbl.font = UIFont(name: "Avenir-Medium", size: 18)!
         lbl.textAlignment = .left
         lbl.isUserInteractionEnabled = true
-        lbl.adjustsFontSizeToFitWidth = false
+        lbl.minimumScaleFactor = 0.8
+        lbl.adjustsFontSizeToFitWidth = true
         lbl.textColor = .gray
         lbl.numberOfLines = 1
         return lbl
@@ -76,7 +80,7 @@ class MeetingCell: UITableViewCell {
         lbl.text = "Join Meeting"
         lbl.adjustsFontSizeToFitWidth = true
         lbl.minimumScaleFactor = 0.6
-        lbl.numberOfLines = 0
+        lbl.numberOfLines = 1
         return lbl
     }()
     
@@ -96,24 +100,25 @@ class MeetingCell: UITableViewCell {
         static let width: CGFloat = (UIScreen.main.bounds.width / 3)
         static let center: CGFloat = 20
         static let labelSpace: CGFloat = 5
+        static let btnWidth: CGFloat = 110
+        static let lblWidth: CGFloat = 65
     }
   
     
     // add layout
     private func layoutCell() {
-        startTimeLbl.addLayout(parentVw: self.contentView, leading: (self.contentView.leadingAnchor, Padding.leading), top: (self.contentView.topAnchor, Padding.top))
+        startTimeLbl.addLayout(parentVw: self.contentView, leading: (self.contentView.leadingAnchor, Padding.leading), top: (self.contentView.topAnchor, Padding.top), width: Padding.lblWidth)
         
-        endTimeLbl.addLayout(parentVw: self.contentView, leading: (self.contentView.leadingAnchor, Padding.leading), top: (startTimeLbl.bottomAnchor, Padding.lineSpacing), bottom: (self.contentView.bottomAnchor, -Padding.top))
-        
-        meetingNameLbl.addLayout(parentVw: self.contentView, leading: (startTimeLbl.trailingAnchor, Padding.spacing),top: (startTimeLbl.topAnchor, 0))
+        endTimeLbl.addLayout(parentVw: self.contentView, leading: (self.contentView.leadingAnchor, Padding.leading), top: (startTimeLbl.bottomAnchor, Padding.lineSpacing), bottom: (self.contentView.bottomAnchor, -Padding.top), width: Padding.lblWidth)
         
         
-        professorLbl.addLayout(parentVw: self.contentView, leading: (meetingNameLbl.leadingAnchor, 0), top: (meetingNameLbl.bottomAnchor, Padding.lineSpacing))
-        
-        
-        joinMeetingVw.addLayout(parentVw: self.contentView, leading: (meetingNameLbl.trailingAnchor, Padding.center),trailing: (self.contentView.trailingAnchor, -Padding.leading), top: (startTimeLbl.topAnchor, Padding.lineSpacing), bottom: (endTimeLbl.bottomAnchor, -Padding.lineSpacing))
+        joinMeetingVw.addLayout(parentVw: self.contentView,trailing: (self.contentView.trailingAnchor, -Padding.leading), top: (startTimeLbl.topAnchor, Padding.lineSpacing), bottom: (endTimeLbl.bottomAnchor, -Padding.lineSpacing), width: Padding.btnWidth)
         
         joinMeetingLbl.addLayout(parentVw: joinMeetingVw, leading: (joinMeetingVw.leadingAnchor, Padding.labelSpace), trailing: (joinMeetingVw.trailingAnchor, -Padding.labelSpace), top: (joinMeetingVw.topAnchor, Padding.labelSpace), bottom: (joinMeetingVw.bottomAnchor, -Padding.labelSpace))
+        
+        meetingNameLbl.addLayout(parentVw: self.contentView, leading: (startTimeLbl.trailingAnchor, Padding.spacing), trailing: (joinMeetingVw.leadingAnchor, -Padding.spacing), top: (startTimeLbl.topAnchor, 0))
+        
+        professorLbl.addLayout(parentVw: self.contentView, leading: (meetingNameLbl.leadingAnchor, 0), trailing: (joinMeetingVw.leadingAnchor, -Padding.spacing), top: (meetingNameLbl.bottomAnchor, Padding.lineSpacing))
         }
     
     func setup(meeting: ZoomMeeting) {
@@ -121,8 +126,8 @@ class MeetingCell: UITableViewCell {
         meetingNameLbl.text = meeting.meetingName
         professorLbl.text = meeting.professorName
         
-        startTimeLbl.text = timeOfDay[meeting.startTime]
-        endTimeLbl.text = timeOfDay[meeting.endTime]
+        startTimeLbl.text = timeMapto[meeting.startTime]
+        endTimeLbl.text = timeMapto[meeting.endTime]
         
         layoutCell()
         addGestures()
