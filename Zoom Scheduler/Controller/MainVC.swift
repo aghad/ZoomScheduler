@@ -122,7 +122,6 @@ class MainVC: UIViewController {
         }
     }
     @objc func addTapped(){
-        print("tapped")
         // provide feedback to user so they know they tapped button
         addHapticFeedback()
         

@@ -34,8 +34,9 @@ extension MainVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
             let action = UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, completionHandler) in
                 
-                // remove item from Realm
-                self.realm.deleteMeeting(self.sections[indexPath.section].items[indexPath.row])
+                // remove item from Realm results
+                let meeting = self.results?[indexPath.row]
+                self.realm.deleteMeeting(meeting!)
                 self.meetingTable.reloadData()
                 completionHandler(true)
             })
@@ -95,10 +96,11 @@ extension MainVC: MeetingCellDelegate {
     
     func joinMeetingTapped(cell: MeetingCell) {
         if let indexPath = meetingTable.indexPath(for: cell) {
-            let meeting = results?[indexPath.row]
-            if let meeting_url = meeting?.meetingURL{
+            let meeting = self.sections[indexPath.section].items[indexPath.row] //results?[indexPath.row]
+            if let meeting_url = meeting.meetingURL{
                 if let url = createURL(url: meeting_url){
                     if isURlValid(url: url){
+                        print("url \(url)")
                         UIApplication.shared.open(url)
                     }
                 }

@@ -27,10 +27,10 @@ class MeetingCell: UITableViewCell {
         lbl.font = UIFont(name: "Avenir-Heavy", size: 18)!
         lbl.textAlignment = .left
         lbl.isUserInteractionEnabled = true
-        lbl.minimumScaleFactor = 0.8
+        lbl.minimumScaleFactor = 0.5
         lbl.adjustsFontSizeToFitWidth = true
         lbl.textColor = .darkGray
-        lbl.numberOfLines = 0
+        lbl.numberOfLines = 1
         return lbl
     }()
     let startTimeLbl: UILabel = {
@@ -119,6 +119,7 @@ class MeetingCell: UITableViewCell {
         meetingNameLbl.addLayout(parentVw: self.contentView, leading: (startTimeLbl.trailingAnchor, Padding.spacing), trailing: (joinMeetingVw.leadingAnchor, -Padding.spacing), top: (startTimeLbl.topAnchor, 0))
         
         professorLbl.addLayout(parentVw: self.contentView, leading: (meetingNameLbl.leadingAnchor, 0), trailing: (joinMeetingVw.leadingAnchor, -Padding.spacing), top: (meetingNameLbl.bottomAnchor, Padding.lineSpacing))
+    //    endTimeLbl.addLayout(parentVw: self.contentView, leading: (self.contentView.leadingAnchor, Padding.leading), bottom: (professorLbl.bottomAnchor, 0), width: Padding.lblWidth)
         }
     
     func setup(meeting: ZoomMeeting) {

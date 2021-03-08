@@ -4,7 +4,6 @@
 //
 //  Created by Destiny Hochhalter Ruiz on 2/28/21.
 //
-
 import Foundation
 
 // type of strategy
@@ -26,7 +25,7 @@ struct Validate {
 // validate string inputs like meeting name and professor name
 struct StringValidation: ValidateStrategy {
     func validate(_ meeting: ZoomMeeting) -> Bool {
-     return false
+     return true
     }
 }
 
@@ -34,20 +33,20 @@ struct StringValidation: ValidateStrategy {
 // validate url before saving it
 struct URLValidation: ValidateStrategy {
     func validate(_ meeting: ZoomMeeting) -> Bool {
-     return false
+     return true
     }
 }
 
 // make sure start and end times are valid
 struct TimeValidation: ValidateStrategy {
     func validate(_ meeting: ZoomMeeting) -> Bool {
-        return false
+        return true
     }
 }
 
 // make sure day input is one of 7 days
 struct DayValidation: ValidateStrategy {
     func validate(_ meeting: ZoomMeeting) -> Bool {
-        return false
+        return true
     }
 }
