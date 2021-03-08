@@ -19,6 +19,9 @@ class MeetingVC: UIViewController {
                notificationToken?.invalidate()
            }
     
+    // keep refrence of edited meeting
+    var editedMeeting: ZoomMeeting? = nil
+    
     let formTable: UITableView = {
         let table = UITableView()
         table.separatorStyle = .singleLine
@@ -142,6 +145,12 @@ class MeetingVC: UIViewController {
             let errorMessage = formValidation.errorMessage
 
             if isValid {
+                // if we are editing meeting, delete it and create
+                // new updated object
+                // easier than identifying which values were updated
+                if editedMeeting != nil {
+                    self.realm.deleteMeeting(editedMeeting!)
+                }
             // save meeting
             self.realm.addMeeting(meeting) //saving meeting locally
             self.dismiss(animated: true, completion: nil) //returning to main VC
@@ -242,7 +251,7 @@ class MeetingVC: UIViewController {
                 }
             }
         }
-        self.realm.deleteMeeting(meeting)
+        self.editedMeeting = meeting
     }
 
     // return if form is valid along w any error messages
