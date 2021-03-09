@@ -21,15 +21,8 @@ We will implement a static instance of our custom class NotificationManager, whi
 
  
 # Class Diagram
-
 ![alt text](https://github.com/cs100/final-project-aghad003-dhoch002-fbust002/blob/master/CS100%20Final%20Project%20OMT%20Diagram.png?raw=true)
 
- > ## Final deliverable
- > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
- 
  ## Screenshots
  ![alt text](https://cdn.discordapp.com/attachments/811058864295510016/818929360329244732/IMG_6455.jpeg)
  ![alt text](https://cdn.discordapp.com/attachments/811058864295510016/818929365567930408/IMG_6456.jpeg)
