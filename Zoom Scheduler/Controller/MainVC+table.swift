@@ -35,8 +35,7 @@ extension MainVC : UITableViewDelegate, UITableViewDataSource {
             let action = UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, completionHandler) in
                 
                 // remove item from Realm results
-                let meeting = self.results?[indexPath.row]
-                self.realm.deleteMeeting(meeting!)
+                self.realm.deleteMeeting(self.sections[indexPath.section].items[indexPath.row])
                 self.meetingTable.reloadData()
                 completionHandler(true)
             })
