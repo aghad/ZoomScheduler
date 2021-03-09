@@ -41,7 +41,11 @@ We will implement a static instance of our custom class NotificationManager, whi
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ ![alt text](https://cdn.discordapp.com/attachments/811058864295510016/818929360329244732/IMG_6455.jpeg)
+ ![alt text](https://cdn.discordapp.com/attachments/811058864295510016/818929365567930408/IMG_6456.jpeg)
+ ![alt text](https://cdn.discordapp.com/attachments/811058864295510016/818929371502215178/IMG_6457.jpeg)
+ ![alt text](https://cdn.discordapp.com/attachments/811058864295510016/818929389877329920/IMG_6458.jpeg)
+ ![alt text](https://cdn.discordapp.com/attachments/811058864295510016/818929402103857192/IMG_6459.jpeg)
  
  ## Installation/Usage
  > Instructions on installing and running your application
