@@ -23,13 +23,13 @@ We will implement a static instance of our custom class NotificationManager, whi
 # Class Diagram
 ![alt text](https://github.com/cs100/final-project-aghad003-dhoch002-fbust002/blob/master/CS100%20Final%20Project%20OMT%20Diagram.png?raw=true)
 
- ## Screenshots
- ![alt text](https://cdn.discordapp.com/attachments/811058864295510016/818929360329244732/IMG_6455.jpeg)
- ![alt text](https://cdn.discordapp.com/attachments/811058864295510016/818929365567930408/IMG_6456.jpeg)
- ![alt text](https://cdn.discordapp.com/attachments/811058864295510016/818929371502215178/IMG_6457.jpeg)
- ![alt text](https://cdn.discordapp.com/attachments/811058864295510016/818929389877329920/IMG_6458.jpeg)
- ![alt text](https://cdn.discordapp.com/attachments/811058864295510016/818929402103857192/IMG_6459.jpeg)
- 
+ ## Screenshots 
+<img src="https://cdn.discordapp.com/attachments/811058864295510016/818929360329244732/IMG_6455.jpeg" width="300" height="650">
+<img src="https://cdn.discordapp.com/attachments/811058864295510016/818929365567930408/IMG_6456.jpeg" width="300" height="650">
+<img src="https://cdn.discordapp.com/attachments/811058864295510016/818929371502215178/IMG_6457.jpeg" width="300" height="650">
+<img src="https://cdn.discordapp.com/attachments/811058864295510016/818929389877329920/IMG_6458.jpeg" width="300" height="650">
+<img src="https://cdn.discordapp.com/attachments/811058864295510016/818929402103857192/IMG_6459.jpeg" width="300" height="650">
+
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
