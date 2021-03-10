@@ -154,6 +154,10 @@ class MeetingVC: UIViewController {
             // save meeting
             self.realm.addMeeting(meeting) //saving meeting locally
             self.dismiss(animated: true, completion: nil) //returning to main VC
+            // add notification for meeting
+            NotificationManager.shared.addNotification(meeting: meeting)
+            // print out notifications
+            //NotificationManager.shared.allNotifications()
             } else {
                 // display respective error message
                 showErrorAlert(message: errorMessage!)

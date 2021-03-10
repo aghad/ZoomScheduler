@@ -654,14 +654,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Zoom Scheduler/Zoom Scheduler.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NZJ8Q663S8;
+				DEVELOPMENT_TEAM = 6DJ78292P6;
 				INFOPLIST_FILE = "Zoom Scheduler/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "destiny.hoch.Zoom-Scheduler";
+				PRODUCT_BUNDLE_IDENTIFIER = "destiny.hoch.Zoom-Scheduler-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -676,14 +676,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Zoom Scheduler/Zoom Scheduler.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NZJ8Q663S8;
+				DEVELOPMENT_TEAM = 6DJ78292P6;
 				INFOPLIST_FILE = "Zoom Scheduler/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "destiny.hoch.Zoom-Scheduler";
+				PRODUCT_BUNDLE_IDENTIFIER = "destiny.hoch.Zoom-Scheduler-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

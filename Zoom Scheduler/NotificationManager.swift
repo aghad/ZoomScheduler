@@ -25,6 +25,47 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         notificationCenter.removeAllPendingNotificationRequests()
     }
     
+    func allNotifications() {
+        // see what pedning notifications and requests we have
+        notificationCenter.getPendingNotificationRequests(completionHandler: { requests in
+            for request in requests {
+                print(request)
+            }
+        })
+        notificationCenter.getDeliveredNotifications { notifications in
+            for n in notifications {
+                print(n)
+            }
+        }
+    }
+    
+    
+    // add a notification for each meeting
+    func addNotification(meeting: ZoomMeeting) {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Join meeting"
+        content.body = "\(meeting.meetingName!) starts now"
+        content.sound = .default
+        
+        let components = getComponents(meeting: meeting)
+        if (components.day != nil) && (components.hour != nil) && (components.minute != nil) {
+            
+            // trigger meeting notification on x day, at x hour, minute
+            let trigger = UNCalendarNotificationTrigger(dateMatching: DateComponents(hour: components.hour, minute: components.minute, weekday: components.day), repeats: true)
+        
+            let uuidString = UUID().uuidString
+            let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+            
+            notificationCenter.add(request) { (error) in
+                if let error = error {
+                    print("Error: ", error)
+                }
+            }
+        }
+    }
+    
+    
     //Ask user for notification permissions
     func requestNotificationAuthorization() {
         let authorizationOptions = UNAuthorizationOptions.init(arrayLiteral: .alert, .badge, .sound)
@@ -67,7 +108,8 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
                 self.requestNotificationAuthorization()
             case .authorized, .provisional:
                 // send notifications
-                self.sendNotification()
+           //     self.sendNotification()
+            break
             default:
                 break // Do nothing
             }
