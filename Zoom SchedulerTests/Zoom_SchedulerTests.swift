@@ -96,136 +96,168 @@ class Zoom_SchedulerTests: XCTestCase {
         let isValid = isTimeSelectionValid(time1: time1, time2: time2)
         XCTAssertEqual(isValid, true)
     }
-    
-    // test fcuntion that creates time components for a notification
-    func testGetComponents1() {
-        let meeting = ZoomMeeting(meetingName: "test", professorName: "test", startTime: 0, endTime: 1, meetingURL: "https://google.com", dayOfWeek: 0)
+  
+    func testStringValidationStrategy1() {
+            let valid = Validate(strategy: StringValidation())
+            // test meeting name
+            // empty string invalid
+            let meeting = ZoomMeeting(meetingName: "", professorName: "", startTime: 0, endTime: 0, meetingURL: "", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
         
-        let components = getComponents(meeting: meeting)
-        let day = components.day
-        let hour = components.hour
-        let minute = components.minute
-        XCTAssertEqual(day, 2) // Monday
-        XCTAssertEqual(hour, 1)
-        XCTAssertEqual(minute, 0)
-    }
-    
-    func testGetComponents2() {
-        let meeting = ZoomMeeting(meetingName: "test", professorName: "test", startTime: 40, endTime: 46, meetingURL: "https://google.com", dayOfWeek: 1)
+    func testStringValidationStrategy2() {
+            let valid = Validate(strategy: StringValidation())
+            // test meeting name
+            // non empty string is valid
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "Reem", startTime: 0, endTime: 0, meetingURL: "", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
         
-        let components = getComponents(meeting: meeting)
-        let day = components.day
-        let hour = components.hour
-        let minute = components.minute
-        XCTAssertEqual(day, 3) // Tuesday
-        XCTAssertEqual(hour, 4)
-        XCTAssertEqual(minute, 20)
-    }
-    
-    func testGetComponents3() {
-        let meeting = ZoomMeeting(meetingName: "test", professorName: "test", startTime: 200, endTime: 205, meetingURL: "https://google.com", dayOfWeek: 5)
+    func testStringValidationStrategy3() {
+            let valid = Validate(strategy: StringValidation())
+            // test meeting name
+            // empty string invalid
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 0, meetingURL: "", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
         
-        let components = getComponents(meeting: meeting)
-        let day = components.day
-        let hour = components.hour
-        let minute = components.minute
-        XCTAssertEqual(day, 0) // Saturday
-        XCTAssertEqual(hour, 17)
-        XCTAssertEqual(minute, 40)
-    }
-    func testGetComponents4() {
-        let meeting = ZoomMeeting(meetingName: "test", professorName: "test", startTime: 13, endTime: 16, meetingURL: "https://google.com", dayOfWeek: 3)
+    func testURLValidationStrategy1() {
+            let valid = Validate(strategy: URLValidation())
+            // url is valid
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 0, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
         
-        let components = getComponents(meeting: meeting)
-        let day = components.day
-        let hour = components.hour
-        let minute = components.minute
-        XCTAssertEqual(day, 5) // Thursday
-        XCTAssertEqual(hour, 2)
-        XCTAssertEqual(minute, 5)
-    }
-    
-    func testGetComponents5() {
-        let meeting = ZoomMeeting(meetingName: "test", professorName: "test", startTime: 256, endTime: 259, meetingURL: "https://google.com", dayOfWeek: 4)
+    func testURLValidationStrategy2() {
+            let valid = Validate(strategy: URLValidation())
+            // url is invalid
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 0, meetingURL: "", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
         
-        let components = getComponents(meeting: meeting)
-        let day = components.day
-        let hour = components.hour
-        let minute = components.minute
-        XCTAssertEqual(day, 6) // Saturday
-        XCTAssertEqual(hour, 22)
-        XCTAssertEqual(minute, 20)
-    }
-    
-    func testGetComponents6() {
-        // invalid start and end times
-        let meeting = ZoomMeeting(meetingName: "test", professorName: "test", startTime: 200, endTime: 205, meetingURL: "https://google.com", dayOfWeek: 8)
+    func testURLValidationStrategy3() {
+            let valid = Validate(strategy: URLValidation())
+            // url is invalid
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 0, meetingURL: "htt", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
         
-        let components = getComponents(meeting: meeting)
-        let day = components.day
-        let hour = components.hour
-        let minute = components.minute
-        XCTAssertEqual(day, nil)
-        XCTAssertEqual(hour, nil)
-        XCTAssertEqual(minute, nil)
-    }
-    
-    func testGetComponents7() {
-        // invalid start and end times, and invalid week day
-        let meeting = ZoomMeeting(meetingName: "test", professorName: "test", startTime: 400, endTime: 404, meetingURL: "https://google.com", dayOfWeek: 9)
+    func testTimeValidationStrategy1() {
+            let valid = Validate(strategy: TimeValidation())
+            // start time before end time
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
         
-        let components = getComponents(meeting: meeting)
-        let day = components.day
-        let hour = components.hour
-        let minute = components.minute
-        XCTAssertEqual(day, nil)
-        XCTAssertEqual(hour, nil)
-        XCTAssertEqual(minute, nil)
-    }
-    
-    func testGetComponents8() {
-        // invalid start and end times with negative numbers
-        let meeting = ZoomMeeting(meetingName: "test", professorName: "test", startTime: -16, endTime: -20, meetingURL: "https://google.com", dayOfWeek: 3)
+    func testTimeValidationStrategy2() {
+            let valid = Validate(strategy: TimeValidation())
+            // start time before end time
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 30, endTime: 40, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
         
-        let components = getComponents(meeting: meeting)
-        let day = components.day
-        let hour = components.hour
-        let minute = components.minute
-        XCTAssertEqual(day, nil)
-        XCTAssertEqual(hour, nil)
-        XCTAssertEqual(minute, nil)
-    }
-    
-    func testGetComponents9() {
-        // invalid day with negative int
-        let meeting = ZoomMeeting(meetingName: "test", professorName: "test", startTime: 16, endTime: 20, meetingURL: "https://google.com", dayOfWeek: -3)
+    func testTimeValidationStrategy3() {
+            let valid = Validate(strategy: TimeValidation())
+            // start and end time match
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 15, endTime: 15, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
         
-        let components = getComponents(meeting: meeting)
-        let day = components.day
-        let hour = components.hour
-        let minute = components.minute
-        XCTAssertEqual(day, nil)
-        XCTAssertEqual(hour, nil)
-        XCTAssertEqual(minute, nil)
-    }
-    
-    func testGetComponents10() {
-        // test with both negative intergers for start/end time and day
-        let meeting = ZoomMeeting(meetingName: "test", professorName: "test", startTime: -16, endTime: -20, meetingURL: "https://google.com", dayOfWeek: -3)
+    func testTimeValidationStrategy4() {
+            let valid = Validate(strategy: TimeValidation())
+            // start time after end time
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 1, endTime: 0, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
         
-        let components = getComponents(meeting: meeting)
-        let day = components.day
-        let hour = components.hour
-        let minute = components.minute
-        XCTAssertEqual(day, nil)
-        XCTAssertEqual(hour, nil)
-        XCTAssertEqual(minute, nil)
+    func testTimeValidationStrategy5() {
+            let valid = Validate(strategy: TimeValidation())
+            // start time after end time
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 50, endTime: 35, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
+        
+    func testDayValidationStrategy1() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
+        
+    func testDayValidationStrategy2() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 1)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
+        
+    func testDayValidationStrategy3() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 6)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
+
+    func testDayValidationStrategy4() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 20, endTime: 21, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 7)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
+        
+    func testDayValidationStrategy5() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 20000)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
+        
+    func testDayValidationStrategy6() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: -2)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
+        
+    func testDayValidationStrategy7() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 3)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
+        
+    func testDayValidationStrategy8() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 5)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
     }
+
     
-    
-    
-}
-    
+//    func testDayDictValid() {
+//        let dictValue = weekDays[0]
+//        XCTAssertEqual(dictValue, "Monday")
+//    }
+//
+//    func testDayDictInvalid() {
+//        let dictValue = weekDays[10]
+//        XCTAssertEqual(dictValue, nil)
+//    }
+//
+//    func testTimeDictValid() {
+//        let dictValue = timeOfDay[131]
+//        XCTAssertEqual(dictValue, "11:55")
+//    }
+//
+//    func testTimeDictInvalid() {
+//        let dictValue = timeOfDay[1000]
+//        XCTAssertEqual(dictValue, nil)
+//    }
+//
+
+//}
+
     /*
       func testValidURL6() {
         let url = createURL(url: "https://www.234234242.com") //Testing Invalid URL
