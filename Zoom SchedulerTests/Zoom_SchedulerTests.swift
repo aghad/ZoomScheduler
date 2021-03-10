@@ -96,8 +96,144 @@ class Zoom_SchedulerTests: XCTestCase {
         let isValid = isTimeSelectionValid(time1: time1, time2: time2)
         XCTAssertEqual(isValid, true)
     }
-    
-}
+  
+    func testStringValidationStrategy1() {
+            let valid = Validate(strategy: StringValidation())
+            // test meeting name
+            // empty string invalid
+            let meeting = ZoomMeeting(meetingName: "", professorName: "", startTime: 0, endTime: 0, meetingURL: "", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
+        
+    func testStringValidationStrategy2() {
+            let valid = Validate(strategy: StringValidation())
+            // test meeting name
+            // non empty string is valid
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "Reem", startTime: 0, endTime: 0, meetingURL: "", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
+        
+    func testStringValidationStrategy3() {
+            let valid = Validate(strategy: StringValidation())
+            // test meeting name
+            // empty string invalid
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 0, meetingURL: "", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
+        
+    func testURLValidationStrategy1() {
+            let valid = Validate(strategy: URLValidation())
+            // url is valid
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 0, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
+        
+    func testURLValidationStrategy2() {
+            let valid = Validate(strategy: URLValidation())
+            // url is invalid
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 0, meetingURL: "", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
+        
+    func testURLValidationStrategy3() {
+            let valid = Validate(strategy: URLValidation())
+            // url is invalid
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 0, meetingURL: "htt", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
+        
+    func testTimeValidationStrategy1() {
+            let valid = Validate(strategy: TimeValidation())
+            // start time before end time
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
+        
+    func testTimeValidationStrategy2() {
+            let valid = Validate(strategy: TimeValidation())
+            // start time before end time
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 30, endTime: 40, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
+        
+    func testTimeValidationStrategy3() {
+            let valid = Validate(strategy: TimeValidation())
+            // start and end time match
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 15, endTime: 15, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
+        
+    func testTimeValidationStrategy4() {
+            let valid = Validate(strategy: TimeValidation())
+            // start time after end time
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 1, endTime: 0, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
+        
+    func testTimeValidationStrategy5() {
+            let valid = Validate(strategy: TimeValidation())
+            // start time after end time
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 50, endTime: 35, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
+        
+    func testDayValidationStrategy1() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 0)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
+        
+    func testDayValidationStrategy2() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 1)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
+        
+    func testDayValidationStrategy3() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 6)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
+
+    func testDayValidationStrategy4() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 20, endTime: 21, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 7)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
+        
+    func testDayValidationStrategy5() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 20000)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
+        
+    func testDayValidationStrategy6() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: -2)
+            XCTAssertEqual(valid.strategy.validate(meeting), false)
+        }
+        
+    func testDayValidationStrategy7() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 3)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
+        
+    func testDayValidationStrategy8() {
+            let valid = Validate(strategy: DayValidation())
+            // day is between 0 and 6
+            let meeting = ZoomMeeting(meetingName: "CS100", professorName: "", startTime: 0, endTime: 1, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 5)
+            XCTAssertEqual(valid.strategy.validate(meeting), true)
+        }
+    }
+
     
 //    func testDayDictValid() {
 //        let dictValue = weekDays[0]
