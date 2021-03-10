@@ -24,6 +24,7 @@
 		339EF69525E3173500832138 /* MeetingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF69425E3173500832138 /* MeetingCell.swift */; };
 		339EF69D25E3176900832138 /* MainVC+table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EF69C25E3176900832138 /* MainVC+table.swift */; };
 		3F27F48C25E4D38400B2A14A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F27F48B25E4D38400B2A14A /* Constants.swift */; };
+		3FBDC2C325F88479009A9F5B /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBDC2C225F88479009A9F5B /* NotificationManager.swift */; };
 		3FF344DAF9134FDE2F01ADBD /* Pods_Zoom_Scheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2CB2467656FB664D2336900 /* Pods_Zoom_Scheduler.framework */; };
 		5CDDBE14CE8AA859FEDE6C77 /* Pods_Zoom_SchedulerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F2237A408116E9EDC338C8E /* Pods_Zoom_SchedulerTests.framework */; };
 		D43F0A4D25F623BE000624E6 /* ValidateStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43F0A4C25F623BE000624E6 /* ValidateStrategy.swift */; };
@@ -74,6 +75,8 @@
 		339EF69425E3173500832138 /* MeetingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingCell.swift; sourceTree = "<group>"; };
 		339EF69C25E3176900832138 /* MainVC+table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+table.swift"; sourceTree = "<group>"; };
 		3F27F48B25E4D38400B2A14A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3FBDC2C225F88479009A9F5B /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		3FBDC2C725F8870F009A9F5B /* Zoom Scheduler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Zoom Scheduler.entitlements"; sourceTree = "<group>"; };
 		5F2237A408116E9EDC338C8E /* Pods_Zoom_SchedulerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zoom_SchedulerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A872E50717EE57EFA69243 /* Pods-Zoom Scheduler-Zoom SchedulerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom Scheduler-Zoom SchedulerUITests.release.xcconfig"; path = "Target Support Files/Pods-Zoom Scheduler-Zoom SchedulerUITests/Pods-Zoom Scheduler-Zoom SchedulerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FE5BDC0817647266316F16 /* Pods-Zoom Scheduler-Zoom SchedulerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom Scheduler-Zoom SchedulerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Zoom Scheduler-Zoom SchedulerUITests/Pods-Zoom Scheduler-Zoom SchedulerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 		333D241225E0BDE60068F4BA /* Zoom Scheduler */ = {
 			isa = PBXGroup;
 			children = (
+				3FBDC2C725F8870F009A9F5B /* Zoom Scheduler.entitlements */,
 				333D241325E0BDE60068F4BA /* AppDelegate.swift */,
 				333D241525E0BDE60068F4BA /* SceneDelegate.swift */,
 				339EF68125E304A600832138 /* Extensions.swift */,
@@ -148,6 +152,7 @@
 				3F27F48B25E4D38400B2A14A /* Constants.swift */,
 				3322700C25E63AC700C113E8 /* Nodes.swift */,
 				D43F0A4C25F623BE000624E6 /* ValidateStrategy.swift */,
+				3FBDC2C225F88479009A9F5B /* NotificationManager.swift */,
 				F652BE2625E4C8FB00AC71D0 /* Model_ */,
 				339EF66225E0C83A00832138 /* View */,
 				339EF66125E0C83200832138 /* Controller */,
@@ -484,6 +489,7 @@
 				3F27F48C25E4D38400B2A14A /* Constants.swift in Sources */,
 				339EF66825E0C85600832138 /* MainVC.swift in Sources */,
 				3351F8E925EAF93200501D37 /* EmptySpaceCell.swift in Sources */,
+				3FBDC2C325F88479009A9F5B /* NotificationManager.swift in Sources */,
 				333D241625E0BDE60068F4BA /* SceneDelegate.swift in Sources */,
 				339EF68725E3053B00832138 /* Enum.swift in Sources */,
 				3322700D25E63AC700C113E8 /* Nodes.swift in Sources */,
@@ -646,6 +652,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Zoom Scheduler/Zoom Scheduler.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NZJ8Q663S8;
 				INFOPLIST_FILE = "Zoom Scheduler/Info.plist";
@@ -667,6 +674,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Zoom Scheduler/Zoom Scheduler.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NZJ8Q663S8;
 				INFOPLIST_FILE = "Zoom Scheduler/Info.plist";
