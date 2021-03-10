@@ -98,7 +98,7 @@ class MeetingVC: UIViewController {
         // Professor name
         TextfieldNode(name: TextFieldNodeName.professorName, input: nil, prompt: FieldNodePrompt.professorName.rawValue, strategy: Validate(strategy: StringValidation()), error: TextFieldNodeError.professorName),
         // Add empty space to see all cells
-        EmptySpaceNode(height: 350)
+        EmptySpaceNode(height: 550)
     ]
     
     override func viewDidLoad() {
@@ -154,6 +154,10 @@ class MeetingVC: UIViewController {
             // save meeting
             self.realm.addMeeting(meeting) //saving meeting locally
             self.dismiss(animated: true, completion: nil) //returning to main VC
+            // add notification for meeting
+            NotificationManager.shared.addNotification(meeting: meeting)
+            // print out notifications
+            //NotificationManager.shared.allNotifications()
             } else {
                 // display respective error message
                 showErrorAlert(message: errorMessage!)

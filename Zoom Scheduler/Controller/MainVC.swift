@@ -81,12 +81,14 @@ class MainVC: UIViewController {
         meetingTable.tableFooterView = UIView()
         addLayout()
         setRealm()
-        //let meetings = ZoomMeeting(meetingName: "temp", professorName: "temp1", startTime: 1, endTime: 2, meetringURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 3)
-        //self.realm.addMeeting(meetings)
-        //self.realm.deleteRealm()
         addGestures()
-        //NotificationManager.shared.scheduleNotifications()
-        NotificationManager.shared.cancelAll()
+        
+    //    let meeting = ZoomMeeting(meetingName: "temp", professorName: "temp1", startTime: 1, endTime: 2, meetingURL: "https://ucr.zoom.us/j/94908786137?pwd=ZWlEbEJyaHJGU3UvSGExOFU2Snc2Zz09", dayOfWeek: 3)
+       // NotificationManager.shared.addNotification(meeting: meeting)
+        
+        NotificationManager.shared.scheduleNotifications()
+      //  NotificationManager.shared.allNotifications()
+        //NotificationManager.shared.cancelAll()
     }
     
     

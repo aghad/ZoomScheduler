@@ -66,3 +66,24 @@ return str.count > 0 ? true : false
 func isTimeSelectionValid(time1: Int, time2: Int) -> Bool {
 return time1 < time2 ? true : false
 }
+
+
+
+// convert string to Date components
+func getComponents(meeting: ZoomMeeting) -> (day: Int?, hour: Int?, minute: Int?) {
+    let inputStr = timeMapto[meeting.startTime]
+    let dateFormatter = DateFormatter()
+    dateFormatter.locale = Locale(identifier: "en-US")
+    // hour, minute am/pm
+    dateFormatter.dateFormat = "h:mm a"
+    guard let date = dateFormatter.date(from: inputStr!) else { return (nil, nil, nil) }
+    //let str = dateFormatter.string(from: date)
+    let calendar = NSCalendar.autoupdatingCurrent
+    
+    let hour = calendar.component(.hour, from: date)
+    let minute = calendar.component(.minute, from: date)
+    let weekDay = weekDays[meeting.dayOfWeek]
+    let day = appleWeekdayMap[weekDay!]
+    
+    return (day, hour, minute)
+}
