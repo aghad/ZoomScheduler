@@ -31,7 +31,8 @@ We will implement a static instance of our custom class NotificationManager, whi
 <img src="https://cdn.discordapp.com/attachments/811058864295510016/818929402103857192/IMG_6459.jpeg" width="300" height="650">
 
  ## Installation/Usage
- > Instructions on installing and running your application
+Install this app by cloning the repository and opening it in Xcode. Then bulid and run the app either on an iPhone simulator in Xcode or on your iPhone by connecting your phone via an iPhone cable to your computer. The app will take a minute or less to downlaod. From there you can use the app. If the program does not compile, it means that your local device is not compatable with the Realm dependency. To fix this, quit Xcode and change directories to the project in your terminal. Type in 'pod update' to make sure your cocoapods are up to date. Now open Xcode again and the app should compile and run.
+
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+Our project was tested and validated via a test suite of unit tests in Xcode using XCTest. Our test suite included multiple tests for each type of fucntion in our program. For fuctions that took in either integers, strings, or objects; we tested those functions with both valid and invalid input to verify that our functions will give expected output and will not crash at runtime. We tested our strategy function to validate user input by unit testing our different stategies. Our ValidationStrategy validated either string, URL, time, or day input, all of which is validated differntly. We tested our function to determine if a URL is valid or not, which was used in our ValidationStrategy class. We used integers to represent values such as the time of the day (ex: 5:00 pm), and tested functions which would convert the integer to it's string representation. To schedule a notification, we used a meeting's start time to create time compnonents for a timer trigger in our NotificationManager Singleton class. We tested this function to ensure our notifications fire at the expected time.
  
