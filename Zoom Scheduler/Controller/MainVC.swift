@@ -85,6 +85,8 @@ class MainVC: UIViewController {
         //self.realm.addMeeting(meetings)
         //self.realm.deleteRealm()
         addGestures()
+        //NotificationManager.shared.scheduleNotifications()
+        NotificationManager.shared.cancelAll()
     }
     
     
