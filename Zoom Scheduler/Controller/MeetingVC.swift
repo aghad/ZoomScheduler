@@ -98,7 +98,7 @@ class MeetingVC: UIViewController {
         // Professor name
         TextfieldNode(name: TextFieldNodeName.professorName, input: nil, prompt: FieldNodePrompt.professorName.rawValue, strategy: Validate(strategy: StringValidation()), error: TextFieldNodeError.professorName),
         // Add empty space to see all cells
-        EmptySpaceNode(height: 350)
+        EmptySpaceNode(height: 550)
     ]
     
     override func viewDidLoad() {
