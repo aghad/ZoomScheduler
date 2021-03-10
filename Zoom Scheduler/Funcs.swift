@@ -64,10 +64,12 @@ return str.count > 0 ? true : false
 }
 
 func isTimeSelectionValid(time1: Int, time2: Int) -> Bool {
-return time1 < time2 ? true : false
+    if timeMapto[time1] != nil && timeMapto[time2] != nil {
+        return time1 < time2 ? true : false
+    } else {
+        return false
+    }
 }
-
-
 
 // convert string to Date components
 func getComponents(meeting: ZoomMeeting) -> (day: Int?, hour: Int?, minute: Int?) {
