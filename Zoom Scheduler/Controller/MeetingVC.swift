@@ -86,7 +86,7 @@ class MeetingVC: UIViewController {
     
     var meetingNodes: [BaseNode] = [
         // meeitng name
-        TextfieldNode(name: TextFieldNodeName.meetingName, input: nil, prompt: FieldNodePrompt.meetingName.rawValue, strategy: Validate(strategy: URLValidation()), error: TextFieldNodeError.meetingName),
+        TextfieldNode(name: TextFieldNodeName.meetingName, input: nil, prompt: FieldNodePrompt.meetingName.rawValue, strategy: Validate(strategy: StringValidation()), error: TextFieldNodeError.meetingName),
         //Meeting URL
         TextfieldNode(name: TextFieldNodeName.meetingURL, input: nil, prompt: FieldNodePrompt.meetingURL.rawValue, strategy: Validate(strategy: URLValidation()), error: TextFieldNodeError.meetingURL),
         // Day of meeting
