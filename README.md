@@ -39,7 +39,7 @@ We will implement a static instance of our custom class NotificationManager, whi
 
 <img src="https://cdn.discordapp.com/attachments/811058864295510016/818929402103857192/IMG_6459.jpeg" width="300" height="650">
 
-<img src="https://cdn.discordapp.com/attachments/796852533041299529/819298552361779200/IMG_6486.jpeg" width="300" height="650">
+<img src="https://cdn.discordapp.com/attachments/796852533041299529/819385625936396288/IMG_6493.jpeg" width="300" height="650">
 
  ## Installation/Usage
 Install this app by cloning the repository and opening it in Xcode. Then build and run the app either on an iPhone simulator in Xcode or on your iPhone by connecting your phone via an iPhone cable to your computer. The app will take a minute or less to download. From there you can use the app. If the program does not compile, it means that your local device is not compatible with the Realm dependency. To fix this, quit Xcode and change directories to the project in your terminal. Type in 'pod update' to make sure your CocoaPods are up to date. Now open Xcode again and the app should compile and run.
