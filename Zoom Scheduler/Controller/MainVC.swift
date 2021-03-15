@@ -21,6 +21,7 @@ class MainVC: UIViewController {
         notificationToken?.invalidate()
     }
     
+    
     // 'My Meetings' title
     let myMeetingsLbl: UILabel = {
         let lbl = UILabel()
