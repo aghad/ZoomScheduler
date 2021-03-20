@@ -12,7 +12,7 @@ import RealmSwift
 class MainVC: UIViewController {
     
     // Setup Realm
-    
+     
     var realm = try! Realm()
     var notificationToken: NotificationToken? = nil
     var results: Results<ZoomMeeting>?
